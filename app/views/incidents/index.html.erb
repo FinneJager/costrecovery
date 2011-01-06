@@ -6,12 +6,12 @@
 
 <div style="margin-bottom:20px;">
 <hr />
-<p><%= link_to 'Change Your Email/Login', edit_user_path(current_user) %> | <%= link_to 'Change Your Profile', edit_profile_path(current_user) %> | <a href="#">Frequently Asked Questions</a> | <a href="#">Contact Us</a> <span style="float:right;"><%= link_to 'Logout', logout_path %></span></p>
+<p><%= link_to 'Change Your Email/Login', edit_user_path(current_user) %> | <%= link_to 'Change Your Profile', edit_profile_path(current_user.profile.id) %> | <a href="#">Frequently Asked Questions</a> | <a href="#">Contact Us</a> <span style="float:right;"><%= link_to 'Logout', logout_path %></span></p>
 <hr />
 </div>
 
 <div id="header">
-<%= link_to 'Click here to submit a new incident report', new_incident_path %>
+<div style="float:left;"><%= image_tag "new.png", :alt => 'Submit a New Incident Report', :style => 'margin-right:5px' %></div><div style="float:left;"> <%= link_to 'Click here to submit a new incident report', new_incident_path %></div>
 </div>
 
 <div style="margin-top:20px;" id="incidentlist">
@@ -20,7 +20,7 @@
     <th>Incident Date</th>
 	<th>Incident Report Number</th>
     <th>Location</th>
-	<th>Claim status</th>
+	<th>Status</th>
     <th></th>
     <th></th>
 	<th></th>
