@@ -1,0 +1,45 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @fire_chief.name %>
+</p>
+
+<p>
+  <b>First hour:</b>
+  <%= @fire_chief.first_hour %>
+</p>
+
+<p>
+  <b>Additional hours:</b>
+  <%= @fire_chief.additional_hours %>
+</p>
+
+<p>
+  <b>Total hours:</b>
+  <%= @fire_chief.total_hours %>
+</p>
+
+<p>
+  <b>Hazmat hours:</b>
+  <%= @fire_chief.hazmat_hours %>
+</p>
+
+<p>
+  <b>Rate1:</b>
+  <%= @fire_chief.rate1 %>
+</p>
+
+<p>
+  <b>Rate2:</b>
+  <%= @fire_chief.rate2 %>
+</p>
+
+<p>
+  <b>Timesheet:</b>
+  <%= @fire_chief.timesheet_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_fire_chief_path(@fire_chief) %> |
+<%= link_to 'Back', fire_chiefs_path %>

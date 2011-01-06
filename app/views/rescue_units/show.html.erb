@@ -1,0 +1,40 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @rescue_unit.name %>
+</p>
+
+<p>
+  <b>First hour:</b>
+  <%= @rescue_unit.first_hour %>
+</p>
+
+<p>
+  <b>Additional hours:</b>
+  <%= @rescue_unit.additional_hours %>
+</p>
+
+<p>
+  <b>Total hours:</b>
+  <%= @rescue_unit.total_hours %>
+</p>
+
+<p>
+  <b>Hazmat hours:</b>
+  <%= @rescue_unit.hazmat_hours %>
+</p>
+
+<p>
+  <b>Rate1:</b>
+  <%= @rescue_unit.rate1 %>
+</p>
+
+<p>
+  <b>Rate2:</b>
+  <%= @rescue_unit.rate2 %>
+</p>
+
+
+<%= link_to 'Edit', edit_rescue_unit_path(@rescue_unit) %> |
+<%= link_to 'Back', rescue_units_path %>

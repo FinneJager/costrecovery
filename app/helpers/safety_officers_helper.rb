@@ -1,0 +1,2 @@
+module SafetyOfficersHelper
+end

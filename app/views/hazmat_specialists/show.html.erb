@@ -1,0 +1,40 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @hazmat_specialist.name %>
+</p>
+
+<p>
+  <b>First hour:</b>
+  <%= @hazmat_specialist.first_hour %>
+</p>
+
+<p>
+  <b>Additional hours:</b>
+  <%= @hazmat_specialist.additional_hours %>
+</p>
+
+<p>
+  <b>Total hours:</b>
+  <%= @hazmat_specialist.total_hours %>
+</p>
+
+<p>
+  <b>Hazmat hours:</b>
+  <%= @hazmat_specialist.hazmat_hours %>
+</p>
+
+<p>
+  <b>Rate1:</b>
+  <%= @hazmat_specialist.rate1 %>
+</p>
+
+<p>
+  <b>Rate2:</b>
+  <%= @hazmat_specialist.rate2 %>
+</p>
+
+
+<%= link_to 'Edit', edit_hazmat_specialist_path(@hazmat_specialist) %> |
+<%= link_to 'Back', hazmat_specialists_path %>

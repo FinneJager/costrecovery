@@ -1,0 +1,40 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @emt.name %>
+</p>
+
+<p>
+  <b>First hour:</b>
+  <%= @emt.first_hour %>
+</p>
+
+<p>
+  <b>Additional hours:</b>
+  <%= @emt.additional_hours %>
+</p>
+
+<p>
+  <b>Total hours:</b>
+  <%= @emt.total_hours %>
+</p>
+
+<p>
+  <b>Hazmat hours:</b>
+  <%= @emt.hazmat_hours %>
+</p>
+
+<p>
+  <b>Rate1:</b>
+  <%= @emt.rate1 %>
+</p>
+
+<p>
+  <b>Rate2:</b>
+  <%= @emt.rate2 %>
+</p>
+
+
+<%= link_to 'Edit', edit_emt_path(@emt) %> |
+<%= link_to 'Back', emts_path %>

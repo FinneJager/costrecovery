@@ -1,0 +1,40 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @tanker.name %>
+</p>
+
+<p>
+  <b>First hour:</b>
+  <%= @tanker.first_hour %>
+</p>
+
+<p>
+  <b>Additional hours:</b>
+  <%= @tanker.additional_hours %>
+</p>
+
+<p>
+  <b>Total hours:</b>
+  <%= @tanker.total_hours %>
+</p>
+
+<p>
+  <b>Hazmat hours:</b>
+  <%= @tanker.hazmat_hours %>
+</p>
+
+<p>
+  <b>Rate1:</b>
+  <%= @tanker.rate1 %>
+</p>
+
+<p>
+  <b>Rate2:</b>
+  <%= @tanker.rate2 %>
+</p>
+
+
+<%= link_to 'Edit', edit_tanker_path(@tanker) %> |
+<%= link_to 'Back', tankers_path %>

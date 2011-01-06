@@ -1,0 +1,40 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @field_unit.name %>
+</p>
+
+<p>
+  <b>First hour:</b>
+  <%= @field_unit.first_hour %>
+</p>
+
+<p>
+  <b>Additional hours:</b>
+  <%= @field_unit.additional_hours %>
+</p>
+
+<p>
+  <b>Total hours:</b>
+  <%= @field_unit.total_hours %>
+</p>
+
+<p>
+  <b>Hazmat hours:</b>
+  <%= @field_unit.hazmat_hours %>
+</p>
+
+<p>
+  <b>Rate1:</b>
+  <%= @field_unit.rate1 %>
+</p>
+
+<p>
+  <b>Rate2:</b>
+  <%= @field_unit.rate2 %>
+</p>
+
+
+<%= link_to 'Edit', edit_field_unit_path(@field_unit) %> |
+<%= link_to 'Back', field_units_path %>

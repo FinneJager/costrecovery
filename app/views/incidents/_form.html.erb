@@ -1,0 +1,112 @@
+<%= form_for(@incident) do |f| %>
+  <% if @incident.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@incident.errors.count, "error") %> prohibited this incident from being saved:</h2>
+
+      <ul>
+      <% @incident.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <h3>General Incident Data</h3>
+  <div class="field">
+    <%= f.label "Incident Date and Time (24-hour format)" %><br />
+    <%= f.datetime_select :incident_datetime %>
+  </div>
+  <div class="field">
+    <%= f.label "Incident Location (street, city and zip code)" %><br />
+    <%= f.text_field :location %>
+  </div>
+  <div class="field">
+    <%= f.label "Report Number" %><br />
+    <%= f.text_field :report_nr %>
+  </div>
+  <hr />
+  <h3>Responsible Party</h3>
+  <div class="field">
+    <%= f.label "Full Name" %><br />
+    <%= f.text_field :responsible_party %>
+  </div>
+    <div class="field">
+    <%= f.label "Street Address" %><br />
+    <%= f.text_field :street %>
+  </div>
+  <div class="field">
+    <%= f.label :city %><br />
+    <%= f.text_field :city %>
+  </div>
+  <div class="field">
+    <%= f.label :state %><br />
+    <%= f.text_field :state %>
+  </div>
+   <div class="field">
+    <%= f.label :home_phone %><br />
+    <%= f.text_field :home_phone %>
+  </div>
+  <div class="field">
+    <%= f.label :cell_phone %><br />
+    <%= f.text_field :cell_phone %>
+  </div>
+  <div class="field">
+    <%= f.label "Is the responsible party an area resident?" %> (please enter 'yes' or 'no') <br />
+    <%= f.text_field :area_resident %>
+  </div>
+  <hr />
+  <h3>Responsible Party's Insurance Carrier Information</h3>
+  <div class="field">
+    <%= f.label :insurance_carrier_name %><br />
+    <%= f.text_field :insurance_carrier_name %>
+  </div>
+  <div class="field">
+    <%= f.label :insurance_carrier_street %><br />
+    <%= f.text_field :insurance_carrier_street %>
+  </div>
+  <div class="field">
+    <%= f.label :insurance_carrier_city %><br />
+    <%= f.text_field :insurance_carrier_city %>
+  </div>
+  <div class="field">
+    <%= f.label :insurance_carrier_state %><br />
+    <%= f.text_field :insurance_carrier_state %>
+  </div>
+  <div class="field">
+    <%= f.label :insurance_carrier_phone %><br />
+    <%= f.text_field :insurance_carrier_phone %>
+  </div>
+  <div class="field">
+    <%= f.label "Insurance carrier contact person" %><br />
+    <%= f.text_field :insurance_carrier_contact %>
+  </div>
+  <div class="field">
+    <%= f.label "Policy number" %><br />
+    <%= f.text_field :policy_nr %>
+  </div>
+  <hr />
+  <h3>Vehicle information</h3>
+  <div class="field">
+    <%= f.label "Vehicle VIN number" %><br />
+    <%= f.text_field :vin_nr %>
+  </div>
+    <div class="field">
+    <%= f.label :vehicle_make %><br />
+    <%= f.text_field :vehicle_make %>
+  </div>
+  <div class="field">
+    <%= f.label :vehicle_model %><br />
+    <%= f.text_field :vehicle_model %>
+  </div>
+  <div class="field">
+    <%= f.label :vehicle_year %><br />
+    <%= f.text_field :vehicle_year %>
+  </div>
+  <div class="field">
+    <%= f.label "License plate number" %><br />
+    <%= f.text_field :license_nr %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

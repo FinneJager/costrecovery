@@ -1,0 +1,40 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @command_officer.name %>
+</p>
+
+<p>
+  <b>First hour:</b>
+  <%= @command_officer.first_hour %>
+</p>
+
+<p>
+  <b>Additional hours:</b>
+  <%= @command_officer.additional_hours %>
+</p>
+
+<p>
+  <b>Total hours:</b>
+  <%= @command_officer.total_hours %>
+</p>
+
+<p>
+  <b>Hazmat hours:</b>
+  <%= @command_officer.hazmat_hours %>
+</p>
+
+<p>
+  <b>Rate1:</b>
+  <%= @command_officer.rate1 %>
+</p>
+
+<p>
+  <b>Rate2:</b>
+  <%= @command_officer.rate2 %>
+</p>
+
+
+<%= link_to 'Edit', edit_command_officer_path(@command_officer) %> |
+<%= link_to 'Back', command_officers_path %>

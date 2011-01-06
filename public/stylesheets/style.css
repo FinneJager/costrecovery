@@ -1,0 +1,52 @@
+body {
+font-family:Arial, Verdana;
+background-color:#fff;
+}
+
+table {
+text-align:left;
+}
+
+table td {
+padding:10px;
+}
+
+table th {
+padding-left:10px;
+font-size:12px;
+}
+
+.inprogress {
+color:orange;
+}
+
+#header {
+height:25px;
+padding-top:0px;
+padding-bottom:15px;
+padding-left:10px;
+text-align:left;
+}
+
+#header a {
+text-decoration:underline;
+}
+
+hr {
+/* color: #f00; */
+background-color: #444;
+height: 0.5px;
+}
+
+a {
+text-decoration:underline;
+font-weight:500;
+}
+
+a:hover {
+font-weight:700;
+}
+
+#incidentlist a {
+text-decoration:underline;
+}

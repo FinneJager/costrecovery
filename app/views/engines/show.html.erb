@@ -1,0 +1,40 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @engine.name %>
+</p>
+
+<p>
+  <b>First hour:</b>
+  <%= @engine.first_hour %>
+</p>
+
+<p>
+  <b>Additional hours:</b>
+  <%= @engine.additional_hours %>
+</p>
+
+<p>
+  <b>Total hours:</b>
+  <%= @engine.total_hours %>
+</p>
+
+<p>
+  <b>Hazmat hours:</b>
+  <%= @engine.hazmat_hours %>
+</p>
+
+<p>
+  <b>Rate1:</b>
+  <%= @engine.rate1 %>
+</p>
+
+<p>
+  <b>Rate2:</b>
+  <%= @engine.rate2 %>
+</p>
+
+
+<%= link_to 'Edit', edit_engine_path(@engine) %> |
+<%= link_to 'Back', engines_path %>

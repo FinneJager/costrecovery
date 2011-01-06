@@ -1,0 +1,2 @@
+module HazmatUnitsHelper
+end

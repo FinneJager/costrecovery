@@ -1,0 +1,49 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  incident_datetime: 2010-11-02 16:25:51
+  location: MyString
+  report_nr: MyString
+  responsible_party: MyString
+  area_resident: MyString
+  street: MyString
+  city: MyString
+  state: MyString
+  home_phone: MyString
+  cell_phone: MyString
+  insurance_carrier_name: MyString
+  insurance_carrier_street: MyString
+  insurance_carrier_city: MyString
+  insurance_carrier_state: MyString
+  insurance_carrier_phone: MyString
+  insurance_carrier_contact: MyString
+  policy_nr: MyString
+  vin_nr: MyString
+  license_nr: MyString
+  vehicle_make: MyString
+  vehicle_model: MyString
+  vehicle_year: MyString
+
+two:
+  incident_datetime: 2010-11-02 16:25:51
+  location: MyString
+  report_nr: MyString
+  responsible_party: MyString
+  area_resident: MyString
+  street: MyString
+  city: MyString
+  state: MyString
+  home_phone: MyString
+  cell_phone: MyString
+  insurance_carrier_name: MyString
+  insurance_carrier_street: MyString
+  insurance_carrier_city: MyString
+  insurance_carrier_state: MyString
+  insurance_carrier_phone: MyString
+  insurance_carrier_contact: MyString
+  policy_nr: MyString
+  vin_nr: MyString
+  license_nr: MyString
+  vehicle_make: MyString
+  vehicle_model: MyString
+  vehicle_year: MyString

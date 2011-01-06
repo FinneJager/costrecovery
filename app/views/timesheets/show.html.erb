@@ -1,0 +1,306 @@
+<p id="notice"><%= notice %></p>
+
+<%= link_to 'Back To Incidents', incidents_path %> |
+<%= link_to 'Edit Timesheet', edit_incident_timesheet_path %>
+
+<hr />
+<div style="height:20px;"></div>
+
+ <table border="0" bordercolor="#000000" style="background-color:#FFF" width="100%" cellpadding="3" cellspacing="3">
+
+  
+ <% if @timesheet.command_officer %>
+ <tr style="font-weight:700;background-color:#66CCFF;">
+		<td>Command Officer</td>
+		<td>First Hour ($<%= @timesheet.command_officer.rate1 %>)</td>
+		<td>Additional Hours ($<%= @timesheet.command_officer.rate2 %>)</td>
+		<td>Total Hours</td>
+		<td>Hazmat Time (in hours)</td>
+		<td>Total Amount</td>
+	</tr>
+	<tr>
+		<td><%= @timesheet.command_officer.name %><div style="float:right"> <%= button_to "Delete", incident_timesheet_command_officer_path, :confirm => "Are you sure you want to delete this Command Officer?", :method => :delete %></div> </td>
+		<td><%= @timesheet.command_officer.first_hour %></td>
+		<td><%= @timesheet.command_officer.additional_hours %></td>
+		<td><%= @timesheet.command_officer.total_hours %></td>
+		<td><%= @timesheet.command_officer.hazmat_hours %></td>
+		<td>$<%= @timesheet.command_officer.totalamount %></td>
+	</tr>
+	<% end %>
+	
+	<% if @timesheet.fire_chief %>
+	<tr style="font-weight:700;background-color:#66CCFF;">
+		<td>Fire Chief</td>
+		<td>First Hour ($<%= @timesheet.fire_chief.rate1 %>)</td>
+		<td>Additional Hours ($<%= @timesheet.fire_chief.rate2 %>)</td>
+		<td>Total Hours</td>
+		<td>Hazmat Time (in hours)</td>
+		<td>Total Amount</td>
+	</tr>
+	<tr>
+		<td><%= @timesheet.fire_chief.name %> <div style="float:right"><%= button_to "Delete", incident_timesheet_fire_chief_path, :confirm => "Are you sure you want to delete this Fire Chief?", :method => :delete %> </div></td>
+		<td><%= @timesheet.fire_chief.first_hour %></td>
+		<td><%= @timesheet.fire_chief.additional_hours %></td>
+		<td><%= @timesheet.fire_chief.total_hours %></td>
+		<td><%= @timesheet.fire_chief.hazmat_hours %></td>
+		<td>$<%= @timesheet.fire_chief.totalamount %></td>
+	</tr>
+	<% end %>
+	
+	<% if @timesheet.fire_fighters %>
+	<% @timesheet.fire_fighters.each do |firefighter| %>
+	<tr style="font-weight:700;background-color:#66CCFF;">
+		<td>Fire Fighter</td>
+		<td>First Hour ($<%= firefighter.rate1 %>)</td>
+		<td>Additional Hours ($<%= firefighter.rate2 %>)</td>
+		<td>Total Hours</td>
+		<td>Hazmat Time (in hours)</td>
+		<td>Total Amount</td>
+	</tr>
+	<tr>
+		<td><%= firefighter.name %><div style="float:right"><%= button_to "Delete", incident_timesheet_fire_fighter_path(params[:incident_id], firefighter.id), :confirm => "Are you sure you want to delete this Fire Fighter?", :controller => 'fire_fighters', :method => :delete %></div> </td>
+		<td><%= firefighter.first_hour %></td>
+		<td><%= firefighter.additional_hours %></td>
+		<td><%= firefighter.total_hours %></td>
+		<td><%= firefighter.hazmat_hours %></td>
+		<td>$<%= firefighter.totalamount %></td>
+	</tr>
+	<% end %>
+	<% end %>
+	
+	<% if @timesheet.safety_officer %>
+	<tr style="font-weight:700;background-color:#66CCFF;">
+		<td>Safety Officer</td>
+		<td>First Hour ($<%= @timesheet.safety_officer.rate1 %>)</td>
+		<td>Additional Hours ($<%= @timesheet.safety_officer.rate2 %>)</td>
+		<td>Total Hours</td>
+		<td>Hazmat Time (in hours)</td>
+		<td>Total Amount</td>
+	</tr>
+	<tr>
+		<td><%= @timesheet.safety_officer.name %><div style="float:right"> <%= button_to "Delete", incident_timesheet_safety_officer_path, :confirm => "Are you sure you want to delete this Safety Officer?", :method => :delete %></div></td>
+		<td><%= @timesheet.safety_officer.first_hour %></td>
+		<td><%= @timesheet.safety_officer.additional_hours %></td>
+		<td><%= @timesheet.safety_officer.total_hours %></td>
+		<td><%= @timesheet.safety_officer.hazmat_hours %></td>
+		<td>$<%= @timesheet.safety_officer.totalamount %></td>
+	</tr>
+	<% end %>
+	
+	<% if @timesheet.emts %>
+	<% @timesheet.emts.each do |emt| %>
+	<tr style="font-weight:700;background-color:#66CCFF;">
+		<td>EMT</td>
+		<td>First Hour ($<%= emt.rate1 %>)</td>
+		<td>Additional Hours ($<%= emt.rate2 %>)</td>
+		<td>Total Hours</td>
+		<td>Hazmat Time (in hours)</td>
+		<td>Total Amount</td>
+	</tr>
+	<tr>
+		<td><%= emt.name %> <div style="float:right"><%= button_to "Delete", incident_timesheet_emt_path(params[:incident_id], emt.id), :confirm => "Are you sure you want to delete this EMT?", :controller => 'emts', :method => :delete %></div></td>
+		<td><%= emt.first_hour %></td>
+		<td><%= emt.additional_hours %></td>
+		<td><%= emt.total_hours %></td>
+		<td><%= emt.hazmat_hours %></td>
+		<td>$<%= emt.totalamount %></td>
+	</tr>
+	<% end %>
+	<% end %>
+	
+	<% if @timesheet.hazmat_specialists %>
+	<% @timesheet.hazmat_specialists.each do |hsp| %>
+	<tr style="font-weight:700;background-color:#66CCFF;">
+		<td>Hazmat Specialist</td>
+		<td>First Hour ($<%= hsp.rate1 %>)</td>
+		<td>Additional Hours ($<%= hsp.rate2 %>)</td>
+		<td>Total Hours</td>
+		<td>Hazmat Time (in hours)</td>
+		<td>Total Amount</td>
+	</tr>
+	<tr>
+		<td><%= hsp.name %><div style="float:right"> <%= button_to "Delete", incident_timesheet_hazmat_specialist_path(params[:incident_id], hsp.id), :confirm => "Are you sure you want to delete this Hazmat Specialist?", :controller => 'hazmat_specialists', :method => :delete %></div></td>
+		<td><%= hsp.first_hour %></td>
+		<td><%= hsp.additional_hours %></td>
+		<td><%= hsp.total_hours %></td>
+		<td><%= hsp.hazmat_hours %></td>
+		<td>$<%= hsp.totalamount %></td>
+	</tr>
+	<% end %>
+	<% end %>
+	
+	<% if @timesheet.command_vehicles %>
+	<% @timesheet.command_vehicles.each do |cv| %>
+	<tr style="font-weight:700;background-color:#66CCFF;">
+		<td>Command Vehicle</td>
+		<td>First Hour ($<%= cv.rate1 %>)</td>
+		<td>Additional Hours ($<%= cv.rate2 %>)</td>
+		<td>Total Hours</td>
+		<td>Hazmat Time (in hours)</td>
+		<td>Total Amount</td>
+	</tr>
+	<tr>
+		<td><%= cv.name %> <div style="float:right"><%= button_to "Delete", incident_timesheet_command_vehicle_path(params[:incident_id], cv.id), :confirm => "Are you sure you want to delete this Command Vehicle?", :controller => 'command_vehicles', :method => :delete %></div></td>
+		<td><%= cv.first_hour %></td>
+		<td><%= cv.additional_hours %></td>
+		<td><%= cv.total_hours %></td>
+		<td><%= cv.hazmat_hours %></td>
+		<td>$<%= cv.totalamount %></td>
+	</tr>
+	<% end %>
+	<% end %>
+	
+	<% if @timesheet.engines %>
+	<% @timesheet.engines.each do |en| %>
+	<tr style="font-weight:700;background-color:#66CCFF;">
+		<td>Engine #</td>
+		<td>First Hour ($<%= en.rate1 %>)</td>
+		<td>Additional Hours ($<%= en.rate2 %>)</td>
+		<td>Total Hours</td>
+		<td>Hazmat Time (in hours)</td>
+		<td>Total Amount</td>
+	</tr>
+	<tr>
+		<td><%= en.name %> <div style="float:right"> <%= button_to "Delete", incident_timesheet_engine_path(params[:incident_id], en.id), :confirm => "Are you sure you want to delete this Engine?", :controller => 'engines', :method => :delete %></div></td>
+		<td><%= en.first_hour %></td>
+		<td><%= en.additional_hours %></td>
+		<td><%= en.total_hours %></td>
+		<td><%= en.hazmat_hours %></td>
+		<td>$<%= en.totalamount %></td>
+	</tr>
+	<% end %>
+	<% end %>
+	
+	<% if @timesheet.emergency_supports %>
+	<% @timesheet.emergency_supports.each do |es| %>
+	<tr style="font-weight:700;background-color:#66CCFF;">
+		<td>Emergency Support</td>
+		<td>First Hour ($<%= es.rate1 %>)</td>
+		<td>Additional Hours ($<%= es.rate2 %>)</td>
+		<td>Total Hours</td>
+		<td>Hazmat Time (in hours)</td>
+		<td>Total Amount</td>
+	</tr>
+	<tr>
+		<td><%= es.name %> <div style="float:right"> <%= button_to "Delete", incident_timesheet_emergency_support_path(params[:incident_id], es.id), :confirm => "Are you sure you want to delete this Emergency Support?", :controller => 'emergency_supports', :method => :delete %></div></td>
+		<td><%= es.first_hour %></td>
+		<td><%= es.additional_hours %></td>
+		<td><%= es.total_hours %></td>
+		<td><%= es.hazmat_hours %></td>
+		<td>$<%= es.totalamount %></td>
+	</tr>
+	<% end %>
+	<% end %>
+	
+	<% if @timesheet.hazmat_units %>
+	<% @timesheet.hazmat_units.each do |hu| %>
+	<tr style="font-weight:700;background-color:#66CCFF;">
+		<td>Hazmat Unit</td>
+		<td>First Hour ($<%= hu.rate1 %>)</td>
+		<td>Additional Hours ($<%= hu.rate2 %>)</td>
+		<td>Total Hours</td>
+		<td>Hazmat Time (in hours)</td>
+		<td>Total Amount</td>
+	</tr>
+	<tr>
+		<td><%= hu.name %> <div style="float:right"><%= button_to "Delete", incident_timesheet_hazmat_unit_path(params[:incident_id], hu.id), :confirm => "Are you sure you want to delete this Hazmat Unit?", :controller => 'hazmat_units', :method => :delete %></div></td>
+		<td><%= hu.first_hour %></td>
+		<td><%= hu.additional_hours %></td>
+		<td><%= hu.total_hours %></td>
+		<td><%= hu.hazmat_hours %></td>
+		<td>$<%= hu.totalamount %></td>
+	</tr>
+	<% end %>
+	<% end %>
+	
+	<% if @timesheet.field_units %>
+	<% @timesheet.field_units.each do |fu| %>
+	<tr style="font-weight:700;background-color:#66CCFF;">
+		<td>Field Unit</td>
+		<td>First Hour ($<%= fu.rate1 %>)</td>
+		<td>Additional Hours ($<%= fu.rate2 %>)</td>
+		<td>Total Hours</td>
+		<td>Hazmat Time (in hours)</td>
+		<td>Total Amount</td>
+	</tr>
+	<tr>
+		<td><%= fu.name %><div style="float:right"> <%= button_to "Delete", incident_timesheet_field_unit_path(params[:incident_id], fu.id), :confirm => "Are you sure you want to delete this Field Unit?", :controller => 'field_units', :method => :delete %></div></td>
+		<td><%= fu.first_hour %></td>
+		<td><%= fu.additional_hours %></td>
+		<td><%= fu.total_hours %></td>
+		<td><%= fu.hazmat_hours %></td>
+		<td>$<%= fu.totalamount %></td>
+	</tr>
+	<% end %>
+	<% end %>
+	
+	<% if @timesheet.pumpers %>
+	<% @timesheet.pumpers.each do |pu| %>
+	<tr style="font-weight:700;background-color:#66CCFF;">
+		<td>Pumper</td>
+		<td>First Hour ($<%= pu.rate1 %>)</td>
+		<td>Additional Hours ($<%= pu.rate2 %>)</td>
+		<td>Total Hours</td>
+		<td>Hazmat Time (in hours)</td>
+		<td>Total Amount</td>
+	</tr>
+	<tr>
+		<td><%= pu.name %> <div style="float:right"><%= button_to "Delete", incident_timesheet_pumper_path(params[:incident_id], pu.id), :confirm => "Are you sure you want to delete this Pumper?", :controller => 'pumpers', :method => :delete %></div></td>
+		<td><%= pu.first_hour %></td>
+		<td><%= pu.additional_hours %></td>
+		<td><%= pu.total_hours %></td>
+		<td><%= pu.hazmat_hours %></td>
+		<td>$<%= pu.totalamount %></td>
+	</tr>
+	<% end %>
+	<% end %>
+	
+	<% if @timesheet.tankers %>
+	<% @timesheet.tankers.each do |ta| %>
+	<tr style="font-weight:700;background-color:#66CCFF;">
+		<td>Tanker</td>
+		<td>First Hour ($<%= ta.rate1 %>)</td>
+		<td>Additional Hours ($<%= ta.rate2 %>)</td>
+		<td>Total Hours</td>
+		<td>Hazmat Time (in hours)</td>
+		<td>Total Amount</td>
+	</tr>
+	<tr>
+		<td><%= ta.name %> <div style="float:right"><%= button_to "Delete", incident_timesheet_tanker_path(params[:incident_id], ta.id), :confirm => "Are you sure you want to delete this Tanker?", :controller => 'tankers', :method => :delete %></div></td>
+		<td><%= ta.first_hour %></td>
+		<td><%= ta.additional_hours %></td>
+		<td><%= ta.total_hours %></td>
+		<td><%= ta.hazmat_hours %></td>
+		<td>$<%= ta.totalamount %></td>
+	</tr>
+	<% end %>
+	<% end %>
+	
+	<% if @timesheet.rescue_units %>
+	<% @timesheet.rescue_units.each do |ru| %>
+	<tr style="font-weight:700;background-color:#66CCFF;">
+		<td>Rescue Unit</td>
+		<td>First Hour ($<%= ru.rate1 %>)</td>
+		<td>Additional Hours ($<%= ru.rate2 %>)</td>
+		<td>Total Hours</td>
+		<td>Hazmat Time (in hours)</td>
+		<td>Total Amount</td>
+	</tr>
+	<tr>
+		<td><%= ru.name %> <div style="float:right"> <%= button_to "Delete", incident_timesheet_rescue_unit_path(params[:incident_id], ru.id), :confirm => "Are you sure you want to delete this Rescue Unit?", :controller => 'rescue_units', :method => :delete %></div></td>
+		<td><%= ru.first_hour %></td>
+		<td><%= ru.additional_hours %></td>
+		<td><%= ru.total_hours %></td>
+		<td><%= ru.hazmat_hours %></td>
+		<td>$<%= ru.totalamount %></td>
+	</tr>
+	<% end %>
+	<% end %>
+	
+</table>
+
+
+
+
+
+

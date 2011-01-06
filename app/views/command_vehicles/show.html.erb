@@ -1,0 +1,40 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @command_vehicle.name %>
+</p>
+
+<p>
+  <b>First hour:</b>
+  <%= @command_vehicle.first_hour %>
+</p>
+
+<p>
+  <b>Additional hours:</b>
+  <%= @command_vehicle.additional_hours %>
+</p>
+
+<p>
+  <b>Total hours:</b>
+  <%= @command_vehicle.total_hours %>
+</p>
+
+<p>
+  <b>Hazmat hours:</b>
+  <%= @command_vehicle.hazmat_hours %>
+</p>
+
+<p>
+  <b>Rate1:</b>
+  <%= @command_vehicle.rate1 %>
+</p>
+
+<p>
+  <b>Rate2:</b>
+  <%= @command_vehicle.rate2 %>
+</p>
+
+
+<%= link_to 'Edit', edit_command_vehicle_path(@command_vehicle) %> |
+<%= link_to 'Back', command_vehicles_path %>

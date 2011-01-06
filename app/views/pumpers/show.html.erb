@@ -1,0 +1,40 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @pumper.name %>
+</p>
+
+<p>
+  <b>First hour:</b>
+  <%= @pumper.first_hour %>
+</p>
+
+<p>
+  <b>Additional hours:</b>
+  <%= @pumper.additional_hours %>
+</p>
+
+<p>
+  <b>Total hours:</b>
+  <%= @pumper.total_hours %>
+</p>
+
+<p>
+  <b>Hazmat hours:</b>
+  <%= @pumper.hazmat_hours %>
+</p>
+
+<p>
+  <b>Rate1:</b>
+  <%= @pumper.rate1 %>
+</p>
+
+<p>
+  <b>Rate2:</b>
+  <%= @pumper.rate2 %>
+</p>
+
+
+<%= link_to 'Edit', edit_pumper_path(@pumper) %> |
+<%= link_to 'Back', pumpers_path %>

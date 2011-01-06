@@ -1,0 +1,40 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @safety_officer.name %>
+</p>
+
+<p>
+  <b>First hour:</b>
+  <%= @safety_officer.first_hour %>
+</p>
+
+<p>
+  <b>Additional hours:</b>
+  <%= @safety_officer.additional_hours %>
+</p>
+
+<p>
+  <b>Total hours:</b>
+  <%= @safety_officer.total_hours %>
+</p>
+
+<p>
+  <b>Hazmat hours:</b>
+  <%= @safety_officer.hazmat_hours %>
+</p>
+
+<p>
+  <b>Rate1:</b>
+  <%= @safety_officer.rate1 %>
+</p>
+
+<p>
+  <b>Rate2:</b>
+  <%= @safety_officer.rate2 %>
+</p>
+
+
+<%= link_to 'Edit', edit_safety_officer_path(@safety_officer) %> |
+<%= link_to 'Back', safety_officers_path %>

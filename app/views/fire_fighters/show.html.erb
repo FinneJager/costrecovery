@@ -1,0 +1,40 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @fire_fighter.name %>
+</p>
+
+<p>
+  <b>First hour:</b>
+  <%= @fire_fighter.first_hour %>
+</p>
+
+<p>
+  <b>Additional hours:</b>
+  <%= @fire_fighter.additional_hours %>
+</p>
+
+<p>
+  <b>Total hours:</b>
+  <%= @fire_fighter.total_hours %>
+</p>
+
+<p>
+  <b>Hazmat hours:</b>
+  <%= @fire_fighter.hazmat_hours %>
+</p>
+
+<p>
+  <b>Rate1:</b>
+  <%= @fire_fighter.rate1 %>
+</p>
+
+<p>
+  <b>Rate2:</b>
+  <%= @fire_fighter.rate2 %>
+</p>
+
+
+<%= link_to 'Edit', edit_fire_fighter_path(@fire_fighter) %> |
+<%= link_to 'Back', fire_fighters_path %>

@@ -1,0 +1,119 @@
+<%= link_to 'Back to Incidents', incidents_path %> |
+<%= link_to 'Edit this incident', edit_incident_path(@incident) %> |
+<%= link_to 'View timesheet', incident_timesheet_path(@incident) %>
+<hr />
+<p id="notice"><%= notice %></p>
+<h2>General Incident Data</h2>
+<p>
+  <b>Incident Date and Time:</b>
+  <%= @incident.incident_datetime %>
+</p>
+
+<p>
+  <b>Incident Location:</b>
+  <%= @incident.location %>
+</p>
+
+<p>
+  <b>Incident Report nr:</b>
+  <%= @incident.report_nr %>
+</p>
+  <hr />
+  <h2>Responsible Party</h2>
+<p>
+  <b>Full name:</b>
+  <%= @incident.responsible_party %>
+</p>
+
+<p>
+  <b>Area resident:</b>
+  <%= @incident.area_resident %>
+</p>
+
+<p>
+  <b>Street:</b>
+  <%= @incident.street %>
+</p>
+
+<p>
+  <b>City:</b>
+  <%= @incident.city %>
+</p>
+
+<p>
+  <b>State:</b>
+  <%= @incident.state %>
+</p>
+
+<p>
+  <b>Home phone:</b>
+  <%= @incident.home_phone %>
+</p>
+
+<p>
+  <b>Cell phone:</b>
+  <%= @incident.cell_phone %>
+</p>
+  <hr />
+  <h2>Responsible Party's Insurance Carrier Information</h2>
+<p>
+  <b>Insurance carrier name:</b>
+  <%= @incident.insurance_carrier_name %>
+</p>
+
+<p>
+  <b>Insurance carrier street:</b>
+  <%= @incident.insurance_carrier_street %>
+</p>
+
+<p>
+  <b>Insurance carrier city:</b>
+  <%= @incident.insurance_carrier_city %>
+</p>
+
+<p>
+  <b>Insurance carrier state:</b>
+  <%= @incident.insurance_carrier_state %>
+</p>
+
+<p>
+  <b>Insurance carrier phone:</b>
+  <%= @incident.insurance_carrier_phone %>
+</p>
+
+<p>
+  <b>Insurance carrier contact:</b>
+  <%= @incident.insurance_carrier_contact %>
+</p>
+
+<p>
+  <b>Policy nr:</b>
+  <%= @incident.policy_nr %>
+</p>
+<hr />
+<h2>Vehicle Information</h2>
+<p>
+  <b>Vin nr:</b>
+  <%= @incident.vin_nr %>
+</p>
+
+<p>
+  <b>Vehicle make:</b>
+  <%= @incident.vehicle_make %>
+</p>
+
+<p>
+  <b>Vehicle model:</b>
+  <%= @incident.vehicle_model %>
+</p>
+
+<p>
+  <b>Vehicle year:</b>
+  <%= @incident.vehicle_year %>
+</p>
+
+<p>
+  <b>License nr:</b>
+  <%= @incident.license_nr %>
+</p>
+

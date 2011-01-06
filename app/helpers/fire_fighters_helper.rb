@@ -1,0 +1,2 @@
+module FireFightersHelper
+end
