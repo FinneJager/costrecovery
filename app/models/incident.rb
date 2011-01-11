@@ -3,6 +3,6 @@ class Incident < ActiveRecord::Base
 	has_one :timesheet, :dependent => :destroy
 	
 	def truncated_time
-		incident_datetime.strftime("%d/%m/%y")
+		incident_datetime.strftime("%m/%d/%y")
 	end
 end
