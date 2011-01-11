@@ -45,14 +45,12 @@ class IncidentsController < ApplicationController
   def create
     @incident = current_user.incidents.new(params[:incident])
 	@incident.status = "In Progress"
-
+	
     respond_to do |format|
       if @incident.save
 	  @incident.create_timesheet()
 	  format.html { redirect_to edit_incident_timesheet_path(@incident), :notice => "The Incident has been saved! Now please fill in the timesheet by adding personnel below. You can do this later if you want to skip this step for now." }
-	    #format.html { redirect_to(@incident, :notice => 'Incident was successfully created.') }
-        #format.xml  { render :xml => @incident, :status => :created, :location => @incident }
-      else
+	    else
         format.html { render :action => "new" }
         format.xml  { render :xml => @incident.errors, :status => :unprocessable_entity }
       end
