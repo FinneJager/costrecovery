@@ -1,6 +1,8 @@
 class Timesheet < ActiveRecord::Base
 	belongs_to :incident
 	
+	has_one :materials
+	
 	has_one :command_officer
 	has_one :fire_chief
 	has_many :fire_fighters

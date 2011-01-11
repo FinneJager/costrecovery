@@ -4,6 +4,7 @@ Costrecovery::Application.routes.draw do
   
   resources :incidents do
 	resource :timesheet do
+		
 		resource :command_officer
 		resource :fire_chief
 		resources :fire_fighters
