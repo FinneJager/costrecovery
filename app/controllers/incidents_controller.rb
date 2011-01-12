@@ -2,6 +2,7 @@ class IncidentsController < ApplicationController
 	
   before_filter :authenticate
 
+    
   # GET /incidents
   # GET /incidents.xml
   def index
@@ -50,6 +51,10 @@ class IncidentsController < ApplicationController
       if @incident.save
 	  @incident.create_timesheet()
 	  @incident.timesheet.create_mat_list()
+	  
+	  @name = User.find(@incident.user_id).profile.name
+	  Notifier.send_notice(@name).deliver
+	  	  
 	  format.html { redirect_to edit_incident_timesheet_path(@incident), :notice => "The Incident has been saved! Now please fill in the timesheet by adding personnel and materials below." }
 	    else
         format.html { render :action => "new" }
