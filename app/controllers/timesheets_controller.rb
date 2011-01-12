@@ -15,6 +15,7 @@ before_filter :authenticate
   # GET /timesheets/1.xml
   def show
     @timesheet = Incident.find(params[:incident_id]).timesheet
+	@mat_list = @timesheet.mat_list
 	
     respond_to do |format|
       format.html # show.html.erb

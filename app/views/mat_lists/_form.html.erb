@@ -1,0 +1,245 @@
+<%= form_for :mat_list, @mat_list, :url => { :action => "create" } do |f| %>
+  <% if @mat_list.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@mat_list.errors.count, "error") %> prohibited this mat_list from being saved:</h2>
+
+      <ul>
+      <% @mat_list.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <hr />
+  
+  <div class="actions">
+    <%= f.submit "Save Changes" %>
+  </div>
+  
+    <table border="0" width="85%" cellpadding="0" cellspacing="0" style="padding:0;">
+	<tr>
+    <th><h2>Product</h2></th>
+    <th><h2>Amount (for example: 1 bag, 0.5 bucket, etc.)</h2></th>
+  </tr>
+	<tr>
+		<td><div class="field">
+        <%= f.check_box :knd %><%= f.label "Kleen-N-Dry" %>
+  </div></td>
+		<td><div class="field">
+    <%= f.label "Amount used:" %>
+    <%= f.text_field :knd_am %>
+  </div></td>
+	</tr>
+
+	<tr>
+		<td><div class="field">
+        <%= f.check_box :gran %><%= f.label "C.I.Agent Granules" %>
+  </div></td>
+		<td> <div class="field">
+    <%= f.label "Amount used:" %>    <%= f.text_field :gran_am %>
+  </div></td>
+	</tr>
+	
+	<tr>
+		<td><div class="field">
+    <%= f.check_box :hds %><%= f.label "Hydrocarbon Detection Strips" %>
+    
+  </div></td>
+		<td><div class="field">
+    <%= f.label "Amount used:" %>
+    <%= f.text_field :hds_am %>
+  </div></td>
+	</tr>
+	
+	<tr>
+		<td>  <div class="field">
+    <%= f.check_box :dwb24 %><%= f.label "De-watering Bag 18x24 inch with 2 inch neck" %>    
+  </div>
+</td>
+		<td> <div class="field">
+    <%= f.label "Amount used:" %>
+    <%= f.text_field :dwb24_am %>
+  </div></td>
+	</tr>
+	
+	<tr>
+		<td><div class="field">
+    <%= f.check_box :dwb36 %><%= f.label "De-watering Bag 18x36 inch with 2 inch neck" %>    
+  </div>
+</td>
+		<td> <div class="field">
+    <%= f.label "Amount used:" %>
+    <%= f.text_field :dwb36_am %>
+  </div></td>
+	</tr>
+	
+	<tr>
+		<td><div class="field">
+    <%= f.check_box :dwb48 %><%= f.label "De-watering Bag 18x48 inch with 2 inch neck" %>    
+  </div>
+</td>
+		<td><div class="field">
+    <%= f.label "Amount used:" %>
+    <%= f.text_field :dwb48_am %>
+  </div></td>
+	</tr>
+	
+	<tr>
+		<td><div class="field">
+    <%= f.check_box :shborange %><%= f.label "Sheen Boom (Orange) 3 inch x 25 feet" %>
+    
+  </div>
+</td>
+		<td><div class="field">
+    <%= f.label "Amount used:" %>
+    <%= f.text_field :shborange_am %>
+  </div></td>
+	</tr>
+	
+	<tr>
+		<td> <div class="field">
+    <%= f.check_box :shbwhite %><%= f.label "Sheen Boom (White core rope)" %>
+    
+  </div>
+</td>
+		<td><div class="field">
+    <%= f.label "Amount used:" %><%= f.text_field :shbwhite_am %>
+    
+  </div></td>
+	</tr>
+	
+	<tr>
+		<td><div class="field">
+    <%= f.check_box :qdb12 %><%= f.label "Quick Deployment Boom - 12 feet" %>    
+  </div>
+</td>
+		<td><div class="field">
+    <%= f.label "Amount used:" %><%= f.text_field :qdb12_am %>
+  </div></td>
+	</tr>
+	
+	<tr>
+		<td><div class="field">
+    <%= f.check_box :qdb25 %><%= f.label "Quick Deployment Boom - 25 feet" %><br />
+     </div>
+</td>
+		<td><div class="field">
+    <%= f.label "Amount used:" %><%= f.text_field :qdb25_am %>
+  </div></td>
+	</tr>
+	
+	<tr>
+		<td><div class="field">
+    <%= f.check_box :qdb100 %><%= f.label "Quick Deployment Boom - 100 feet" %>
+    
+  </div>
+</td>
+		<td><div class="field">
+    <%= f.label "Amount used:" %><%= f.text_field :qdb100_am %>
+    
+  </div></td>
+	</tr>
+	
+	<tr>
+		<td><div class="field">
+    <%= f.check_box :mb20 %><%= f.label "Marine Boom 3 inch x 20 inch" %>
+    
+  </div>
+</td>
+		<td><div class="field">
+    <%= f.label "Amount used:" %><%= f.text_field :mb20_am %>
+    
+  </div></td>
+	</tr>
+	
+	<tr>
+		<td><div class="field">
+    <%= f.check_box :mb5 %><%= f.label "Marine Boom 3 inch x 5 feet" %>
+    
+  </div>
+</td>
+		<td><div class="field">
+    <%= f.label "Amount used:" %><%= f.text_field :mb5_am %>
+   </div></td>
+	</tr>
+	
+	<tr>
+		<td><div class="field">
+    <%= f.check_box :mb10 %><%= f.label "Marine Boom 3 inch x 10 feet" %>
+    </div>
+</td>
+		<td><div class="field">
+    <%= f.label "Amount used:" %><%= f.text_field :mb10_am %>
+    
+  </div></td>
+	</tr>
+	
+	<tr>
+		<td><div class="field">
+    <%= f.check_box :pillow %><%= f.label "Pillow A 12 inch x 12 inch" %>
+    
+  </div>
+</td>
+		<td><div class="field">
+    <%= f.label "Amount used:" %><%= f.text_field :pillow_am %>
+    
+  </div></td>
+	</tr>
+	
+	<tr>
+		<td><div class="field">
+    <%= f.check_box :evac %><%= f.label "EVAC 2 inch Camlock Fitting" %>
+    
+  </div>
+</td>
+		<td><div class="field">
+    <%= f.label "Amount used:" %><%= f.text_field :evac_am %>
+    
+  </div></td>
+	</tr>
+	
+	<tr>
+		<td><div class="field">
+    <%= f.check_box :abboom %><%= f.label "Absorbent Boom 5 inch x 10 feet (4 pack)" %>
+    
+  </div>
+</td>
+		<td><div class="field">
+    <%= f.label "Amount used:" %><%= f.text_field :abboom_am %>
+    
+  </div></td>
+	</tr>
+	
+	<tr>
+		<td><div class="field">
+    <%= f.check_box :abpad %><%= f.label "Absorbent Pad (oil only) 15 inch x 19 inch (100 pack)" %>
+    
+  </div>
+</td>
+		<td><div class="field">
+    <%= f.label "Amount used:" %><%= f.text_field :abpad_am %>
+      </div></td>
+	</tr>
+	
+	<tr>
+		<td><div class="field">
+    <%= f.check_box :putty %><%= f.label "Tank Repair Putty" %>
+    
+  </div>
+</td>
+		<td> <div class="field">
+    <%= f.label "amount used:" %><%= f.text_field :putty_am %>
+      </div></td>
+	</tr>
+	</table>
+	
+	<hr />
+
+    <div class="field">
+    <h3><%= f.label "If you have any comments, please enter them below:" %></h3>
+    <%= f.text_area :additional %>
+  </div>
+  <div class="actions">
+    <%= f.submit "Save Changes" %>
+  </div>
+<% end %>

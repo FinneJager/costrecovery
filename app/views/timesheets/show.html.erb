@@ -1,10 +1,14 @@
 <p id="notice"><%= notice %></p>
 
-<%= link_to 'Back To Incidents', incidents_path %> |
-<%= link_to 'Edit Timesheet', edit_incident_timesheet_path %>
+<%= link_to 'Back To Home', incidents_path %> |
+<%= link_to 'Edit Personnel', edit_incident_timesheet_path %> |
+<%= link_to 'Edit Materials', edit_incident_timesheet_mat_list_path %>
 
 <hr />
 <div style="height:20px;"></div>
+
+<h1>Personnel <%= link_to '(edit)', edit_incident_timesheet_path %></h1>
+
 
  <table border="0" bordercolor="#000000" style="background-color:#FFF" width="100%" cellpadding="3" cellspacing="3">
 
@@ -298,6 +302,160 @@
 	
 </table>
 
+<h1>Materials <%= link_to '(edit)', edit_incident_timesheet_mat_list_path %></h1>
+
+<table border="0" bordercolor="#000000" style="background-color:#FFF" width="75%" cellpadding="3" cellspacing="3">
+   
+ <tr style="font-weight:700;background-color:#66CCFF;">
+		<th>Product Name</th>
+		<th>Amount Used</th>
+		</th>
+	</tr>
+	
+	<% if @mat_list.knd %>
+	<tr>
+		<td>Kleen-N-Dry</td>
+		<td><%= @mat_list.knd_am %></td>
+	</tr>
+	<% end %>
+	
+	<% if @mat_list.gran %>
+	<tr>
+		<td>C.I.Agent Granules</td>
+		<td><%= @mat_list.gran_am %></td>
+	</tr>
+	<% end %>
+	
+	<% if @mat_list.hds %>
+	<tr>
+		<td>Hydrocarbon Detection Strips</td>
+		<td><%= @mat_list.hds_am %></td>
+	</tr>
+	<% end %>
+	
+	<% if @mat_list.dwb24 %>
+	<tr>
+		<td>De-watering Bag 18"x24" with 2" Neck</td>
+		<td><%= @mat_list.dwb24_am %></td>
+	</tr>
+	<% end %>
+	
+	<% if @mat_list.dwb36 %>
+	<tr>
+		<td>De-watering Bag 18"x36" with 2" Neck</td>
+		<td><%= @mat_list.dwb36_am %></td>
+	</tr>
+	<% end %>
+	
+	<% if @mat_list.dwb48 %>
+	<tr>
+		<td>De-watering Bag 18"x48" with 2" Neck</td>
+		<td><%= @mat_list.dwb48_am %></td>
+	</tr>
+	<% end %>
+	
+	<% if @mat_list.shborange %>
+	<tr>
+		<td>Sheen Boom (Orange) 3"x25'</td>
+		<td><%= @mat_list.shborange_am %></td>
+	</tr>
+	<% end %>
+	
+	<% if @mat_list.shbwhite %>
+	<tr>
+		<td>Sheen Boom (White core rope)</td>
+		<td><%= @mat_list.shbwhite_am %></td>
+	</tr>
+	<% end %>
+	
+	<% if @mat_list.qdb12 %>
+	<tr>
+		<td>Quick Deployment Boom 12'</td>
+		<td><%= @mat_list.qdb12_am %></td>
+	</tr>
+	<% end %>
+	
+	<% if @mat_list.qdb25 %>
+	<tr>
+		<td>Quick Deployment Boom 25'</td>
+		<td><%= @mat_list.qdb25_am %></td>
+	</tr>
+	<% end %>
+	
+	<% if @mat_list.qdb100 %>
+	<tr>
+		<td>Quick Deployment Boom 100'</td>
+		<td><%= @mat_list.qdb100_am %></td>
+	</tr>
+	<% end %>
+	
+	<% if @mat_list.mb20 %>
+	<tr>
+		<td>Marine Boom 3"x20"</td>
+		<td><%= @mat_list.mb20_am %></td>
+	</tr>
+	<% end %>
+	
+	<% if @mat_list.mb5 %>
+	<tr>
+		<td>Marine Boom 3"x5'</td>
+		<td><%= @mat_list.mb5_am %></td>
+	</tr>
+	<% end %>
+	
+	<% if @mat_list.mb10 %>
+	<tr>
+		<td>Marine Boom 3"x10'</td>
+		<td><%= @mat_list.mb10_am %></td>
+	</tr>
+	<% end %>
+	
+	<% if @mat_list.pillow %>
+	<tr>
+		<td>Pillow A 12"x12"</td>
+		<td><%= @mat_list.pillow_am %></td>
+	</tr>
+	<% end %>
+	
+	<% if @mat_list.evac %>
+	<tr>
+		<td>EVAC 2" Camlock Fitting</td>
+		<td><%= @mat_list.evac_am %></td>
+	</tr>
+	<% end %>
+	
+	<% if @mat_list.abboom %>
+	<tr>
+		<td>Absorbent Boom 5"x10' (4 pack)</td>
+		<td><%= @mat_list.abboom_am %></td>
+	</tr>
+	<% end %>
+	
+	<% if @mat_list.abpad %>
+	<tr>
+		<td>Absorbent Pad (oil only) 15"x19" (100 pack)</td>
+		<td><%= @mat_list.abpad_am %></td>
+	</tr>
+	<% end %>
+	
+	<% if @mat_list.putty %>
+	<tr>
+		<td>Tank Repair Putty</td>
+		<td><%= @mat_list.putty_am %></td>
+	</tr>
+	<% end %>
+	
+	</table>
+	
+	<% if @mat_list.additional %>
+	<h3>Additional Comments:</h3>
+	<%= @mat_list.additional %></td>
+	<% end %>
+
+	
+	
+	
+	</table>
 
 
 

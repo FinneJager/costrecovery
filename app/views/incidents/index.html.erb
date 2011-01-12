@@ -1,7 +1,7 @@
 
 <div style="text-align:left;">
 <h1 style="color:#333333"><%= current_user.profile.department %></h1>
-<h2>Cost Recovery Dashboard</h2>
+<h2>Cost Recovery Control Panel</h2>
 </div>
 
 <div style="margin-bottom:20px;">
@@ -11,7 +11,7 @@
 </div>
 
 <div id="header">
-<div style="float:left;"><%= image_tag "new.png", :alt => 'Submit a New Incident Report', :style => 'margin-right:5px' %></div><div style="float:left;"> <%= link_to 'Click here to submit a new incident report', new_incident_path %></div>
+<div style="float:left;"><%= image_tag "new.png", :alt => 'Submit a New Incident Report', :style => 'margin-right:5px' %></div><div style="float:left;"> <%= link_to 'Click here to submit a new incident', new_incident_path %></div>
 </div>
 
 <div style="margin-top:20px;" id="incidentlist">
@@ -37,10 +37,8 @@
 	<td><font color="green"><%= incident.status %></font></td>
 	<% end %>
     <td><%= link_to 'View Time Sheet', incident_timesheet_path(incident) %></td>
-	<% if current_user.admin == "yes" %>
 	<td><%= link_to 'Delete Incident', incident, :confirm => 'Are you sure?', :method => :delete %></td>
-	<% end %>
-  </tr>
+	 </tr>
 <% end %>
 </table>
 </div>

@@ -20,6 +20,7 @@ class User < ActiveRecord::Base
     self.hashed_password == encrypt(password)
   end
   
+    
   protected
     def encrypt_new_password
       return if password.blank?

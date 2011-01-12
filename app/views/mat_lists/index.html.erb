@@ -1,0 +1,99 @@
+<h1>Listing mat_lists</h1>
+
+<table>
+  <tr>
+    <th>Knd</th>
+    <th>Knd am</th>
+    <th>Gran</th>
+    <th>Gran am</th>
+    <th>Hds</th>
+    <th>Hds am</th>
+    <th>Dwb24</th>
+    <th>Dwb24 am</th>
+    <th>Dwb36</th>
+    <th>Dwb36 am</th>
+    <th>Dwb48</th>
+    <th>Dwb48 am</th>
+    <th>Shborange</th>
+    <th>Shborange am</th>
+    <th>Shbwhite</th>
+    <th>Shbwhite am</th>
+    <th>Qdb12</th>
+    <th>Qdb12 am</th>
+    <th>Qdb25</th>
+    <th>Qdb25 am</th>
+    <th>Qdb100</th>
+    <th>Qdb100 am</th>
+    <th>Mb20</th>
+    <th>Mb20 am</th>
+    <th>Mb5</th>
+    <th>Mb5 am</th>
+    <th>Mb10</th>
+    <th>Mb10 am</th>
+    <th>Pillow</th>
+    <th>Pillow am</th>
+    <th>Evac</th>
+    <th>Evac am</th>
+    <th>Abboom</th>
+    <th>Abboom am</th>
+    <th>Abpad</th>
+    <th>Abpad am</th>
+    <th>Putty</th>
+    <th>Putty am</th>
+    <th>Additional</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @mat_lists.each do |mat_list| %>
+  <tr>
+    <td><%= mat_list.knd %></td>
+    <td><%= mat_list.knd_am %></td>
+    <td><%= mat_list.gran %></td>
+    <td><%= mat_list.gran_am %></td>
+    <td><%= mat_list.hds %></td>
+    <td><%= mat_list.hds_am %></td>
+    <td><%= mat_list.dwb24 %></td>
+    <td><%= mat_list.dwb24_am %></td>
+    <td><%= mat_list.dwb36 %></td>
+    <td><%= mat_list.dwb36_am %></td>
+    <td><%= mat_list.dwb48 %></td>
+    <td><%= mat_list.dwb48_am %></td>
+    <td><%= mat_list.shborange %></td>
+    <td><%= mat_list.shborange_am %></td>
+    <td><%= mat_list.shbwhite %></td>
+    <td><%= mat_list.shbwhite_am %></td>
+    <td><%= mat_list.qdb12 %></td>
+    <td><%= mat_list.qdb12_am %></td>
+    <td><%= mat_list.qdb25 %></td>
+    <td><%= mat_list.qdb25_am %></td>
+    <td><%= mat_list.qdb100 %></td>
+    <td><%= mat_list.qdb100_am %></td>
+    <td><%= mat_list.mb20 %></td>
+    <td><%= mat_list.mb20_am %></td>
+    <td><%= mat_list.mb5 %></td>
+    <td><%= mat_list.mb5_am %></td>
+    <td><%= mat_list.mb10 %></td>
+    <td><%= mat_list.mb10_am %></td>
+    <td><%= mat_list.pillow %></td>
+    <td><%= mat_list.pillow_am %></td>
+    <td><%= mat_list.evac %></td>
+    <td><%= mat_list.evac_am %></td>
+    <td><%= mat_list.abboom %></td>
+    <td><%= mat_list.abboom_am %></td>
+    <td><%= mat_list.abpad %></td>
+    <td><%= mat_list.abpad_am %></td>
+    <td><%= mat_list.putty %></td>
+    <td><%= mat_list.putty_am %></td>
+    <td><%= mat_list.additional %></td>
+    <td><%= link_to 'Show', mat_list %></td>
+    <td><%= link_to 'Edit', edit_mat_list_path(mat_list) %></td>
+    <td><%= link_to 'Destroy', mat_list, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Mat list', new_mat_list_path %>

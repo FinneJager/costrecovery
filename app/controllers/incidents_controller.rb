@@ -49,7 +49,8 @@ class IncidentsController < ApplicationController
     respond_to do |format|
       if @incident.save
 	  @incident.create_timesheet()
-	  format.html { redirect_to edit_incident_timesheet_path(@incident), :notice => "The Incident has been saved! Now please fill in the timesheet by adding personnel below. You can do this later if you want to skip this step for now." }
+	  @incident.timesheet.create_mat_list()
+	  format.html { redirect_to edit_incident_timesheet_path(@incident), :notice => "The Incident has been saved! Now please fill in the timesheet by adding personnel and materials below." }
 	    else
         format.html { render :action => "new" }
         format.xml  { render :xml => @incident.errors, :status => :unprocessable_entity }
