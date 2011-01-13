@@ -6,8 +6,11 @@ class IncidentsController < ApplicationController
   # GET /incidents
   # GET /incidents.xml
   def index
-    @incidents = current_user.incidents.all
-
+    if current_user.admin == "yes"
+	@incidents = Incident.all
+	else
+	@incidents = current_user.incidents.all
+  end
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @incidents }
@@ -82,7 +85,12 @@ class IncidentsController < ApplicationController
   # DELETE /incidents/1
   # DELETE /incidents/1.xml
   def destroy
+    if current_user.admin == "yes"
+	@incident = Incident.find(params[:id])
+	else
     @incident = current_user.incidents.find(params[:id])
+	end
+	
     @incident.destroy
 
     respond_to do |format|
