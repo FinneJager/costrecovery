@@ -8,7 +8,7 @@ class User < ActiveRecord::Base
 	before_save :encrypt_new_password
 	
 	has_one :profile, :dependent => :destroy
-	has_many :incidents, :order => 'incident_datetime DESC', :dependent => :nullify
+	has_many :incidents, :order => 'incident_datetime DESC', :dependent => :destroy
 	has_many :timesheets, :through => :incidents
 	
 	def self.authenticate(email, password)

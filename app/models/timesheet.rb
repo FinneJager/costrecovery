@@ -1,19 +1,19 @@
 class Timesheet < ActiveRecord::Base
 	belongs_to :incident
 	
-	has_one :mat_list
-	has_one :command_officer
-	has_one :fire_chief
-	has_many :fire_fighters
-	has_one :safety_officer
-	has_many :emts
-	has_many :hazmat_specialists
-	has_many :command_vehicles
-	has_many :engines
-	has_many :emergency_supports
-	has_many :hazmat_units
-	has_many :field_units
-	has_many :pumpers
-	has_many :tankers
-	has_many :rescue_units
+	has_one :mat_list, :dependent => :destroy
+	has_one :command_officer, :dependent => :destroy
+	has_one :fire_chief, :dependent => :destroy
+	has_many :fire_fighters, :dependent => :destroy
+	has_one :safety_officer, :dependent => :destroy
+	has_many :emts, :dependent => :destroy
+	has_many :hazmat_specialists, :dependent => :destroy
+	has_many :command_vehicles, :dependent => :destroy
+	has_many :engines, :dependent => :destroy
+	has_many :emergency_supports, :dependent => :destroy
+	has_many :hazmat_units, :dependent => :destroy
+	has_many :field_units, :dependent => :destroy
+	has_many :pumpers, :dependent => :destroy
+	has_many :tankers, :dependent => :destroy
+	has_many :rescue_units, :dependent => :destroy
 end

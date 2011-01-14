@@ -22,6 +22,10 @@ div.field, div.actions {
   margin-bottom: 10px;
 }
 
+p.notice {
+background-color: #00CC00;
+}
+
 #notice {
   color: green;
 }
