@@ -7,9 +7,9 @@ class IncidentsController < ApplicationController
   # GET /incidents.xml
   def index
     if current_user.admin == "yes"
-	@incidents = Incident.all
+	@incidents = Incident.all(:order => 'incident_datetime DESC')
 	else
-	@incidents = current_user.incidents.all
+	@incidents = current_user.incidents
   end
     respond_to do |format|
       format.html # index.html.erb
