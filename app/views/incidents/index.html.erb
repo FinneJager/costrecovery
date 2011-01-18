@@ -8,7 +8,7 @@
 <hr />
 <p>
 <% if current_user.admin != "yes" %>
-<%= link_to 'Change Your Email/Login', edit_user_path(current_user) %> | <%= link_to 'Change Your Profile', edit_profile_path(current_user.profile.id) %> | <a href="#">Frequently Asked Questions</a> | <a href="#">Contact Us</a><span style="float:right;"><% end %><%= link_to 'Logout', logout_path %></span></p>
+<%= link_to 'Change Your Email/Login', edit_user_path(current_user) %> | <%= link_to 'Change Your Profile', edit_profile_path(current_user.profile.id) %> | <a href="mailto:tom@ciagent.com">Email Us</a><span style="float:right;"><% end %><%= link_to 'Logout', logout_path %></span></p>
 <hr />
 </div>
 

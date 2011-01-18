@@ -2,12 +2,13 @@
 
 <%= link_to 'Back To Home', incidents_path %> |
 <%= link_to 'Edit Personnel', edit_incident_timesheet_path %> |
-<%= link_to 'Edit Materials', edit_incident_timesheet_mat_list_path %>
+<%= link_to 'Edit Materials', edit_incident_mat_list_path %>
+
 
 <hr />
 <div style="height:20px;"></div>
 
-<h1>Personnel <%= link_to '(edit)', edit_incident_timesheet_path %></h1>
+<h1>Personnel <%= link_to '(add)', edit_incident_timesheet_path %></h1>
 
 
  <table border="0" bordercolor="#000000" style="background-color:#FFF" width="100%" cellpadding="3" cellspacing="3">
@@ -301,8 +302,8 @@
 	<% end %>
 	
 </table>
+<h1>Materials <%= link_to '(add)', edit_incident_mat_list_path %></h1>
 
-<h1>Materials <%= link_to '(edit)', edit_incident_timesheet_mat_list_path %></h1>
 
 <table border="0" bordercolor="#000000" style="background-color:#FFF" width="75%" cellpadding="3" cellspacing="3">
    

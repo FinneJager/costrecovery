@@ -13,8 +13,8 @@ class MatListsController < ApplicationController
   # GET /mat_lists/1
   # GET /mat_lists/1.xml
   def show
-    @timesheet = Incident.find(params[:incident_id]).timesheet
-	@mat_list = @timesheet.mat_list
+    @incident = Incident.find(params[:incident_id])
+	@mat_list = @incident.mat_list
     
     respond_to do |format|
       format.html # show.html.erb
@@ -34,15 +34,15 @@ class MatListsController < ApplicationController
 
   # GET /mat_lists/1/edit
   def edit
-    @timesheet = Incident.find(params[:incident_id]).timesheet
-	@mat_list = @timesheet.mat_list
+    @incident = Incident.find(params[:incident_id])
+	@mat_list = @incident.mat_list
   end
 
   # POST /mat_lists
   # POST /mat_lists.xml
   def create
-    @timesheet = Incident.find(params[:incident_id]).timesheet
-	@mat_list = @timesheet.build_mat_list(params[:mat_list])
+    @incident = Incident.find(params[:incident_id])
+	@mat_list = @incident.build_mat_list(params[:mat_list])
 	
     respond_to do |format|
       if @mat_list.save
@@ -56,11 +56,12 @@ class MatListsController < ApplicationController
   # PUT /mat_lists/1
   # PUT /mat_lists/1.xml
   def update
-    @mat_list = MatList.find(params[:id])
+    @incident = Incident.find(params[:incident_id])
+	@mat_list = @incident.mat_list
 
     respond_to do |format|
       if @mat_list.update_attributes(params[:mat_list])
-        format.html { redirect_to(@mat_list, :notice => 'Mat list was successfully updated.') }
+        format.html { redirect_to(incident_timesheet_path, :notice => 'Materials List was successfully saved.') }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }

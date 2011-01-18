@@ -1,7 +1,6 @@
 class Timesheet < ActiveRecord::Base
 	belongs_to :incident
 	
-	has_one :mat_list, :dependent => :destroy
 	has_one :command_officer, :dependent => :destroy
 	has_one :fire_chief, :dependent => :destroy
 	has_many :fire_fighters, :dependent => :destroy
