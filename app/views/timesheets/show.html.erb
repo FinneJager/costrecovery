@@ -8,7 +8,7 @@
 <hr />
 <div style="height:20px;"></div>
 
-<h1>Personnel <%= link_to '(add)', edit_incident_timesheet_path %></h1>
+<h1>Personnel <%= link_to '(edit)', edit_incident_timesheet_path %></h1>
 
 
  <table border="0" bordercolor="#000000" style="background-color:#FFF" width="100%" cellpadding="3" cellspacing="3">
@@ -302,9 +302,7 @@
 	<% end %>
 	
 </table>
-<h1>Materials <%= link_to '(add)', edit_incident_mat_list_path %></h1>
-
-<% if 
+<h1>Materials <%= link_to '(edit)', edit_incident_mat_list_path %></h1>
 
 <table border="0" bordercolor="#000000" style="background-color:#FFF" width="75%" cellpadding="3" cellspacing="3">
    
@@ -316,7 +314,7 @@
 	
 	<% if @mat_list.knd %>
 	<tr>
-		<td>Kleen-N-Dry</td>
+		<td>Kleen-N-Dry </td>
 		<td><%= @mat_list.knd_am %></td>
 	</tr>
 	<% end %>
@@ -449,7 +447,7 @@
 	
 	</table>
 	
-	<% if @mat_list.additional %>
+	<% if @mat_list.additional != '' %>
 	<h3>Additional Comments:</h3>
 	<%= @mat_list.additional %></td>
 	<% end %>

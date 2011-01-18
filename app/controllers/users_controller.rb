@@ -8,7 +8,7 @@ class UsersController < ApplicationController
   def create
     @user = User.new(params[:user])
     if @user.save
-      redirect_to incidents_path, :notice => 'User successfully added.'
+	    redirect_to incidents_path, :notice => 'User successfully added.'
     else
       render :action => 'new'
     end
