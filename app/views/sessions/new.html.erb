@@ -1,15 +1,19 @@
-<h1>Login</h1>
+<center>
 
+<%= image_tag "irstlogo.png", :alt => 'Immediate Response Spill Technologies', :style => 'margin-bottom:25px' %>
+<h2>Cost Recovery Control Panel</h2>
 <%= form_tag session_path do %>
   <div class="field">
-    <%= label_tag :email %><br />
+    <%= label_tag "Your Email address" %><br />
     <%= text_field_tag :email %>
   </div>
   <div class="field">
-    <%= label_tag :password %><br />
+    <%= label_tag "Your password" %><br />
     <%= password_field_tag :password %>
   </div>
   <div class="actions">
     <%= submit_tag 'Login' %>
   </div>
 <% end %>
+
+</center>

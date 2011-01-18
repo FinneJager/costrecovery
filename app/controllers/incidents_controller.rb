@@ -48,7 +48,7 @@ class IncidentsController < ApplicationController
   # POST /incidents.xml
   def create
     @incident = current_user.incidents.new(params[:incident])
-	@incident.status = "In Progress"
+	@incident.status = "Received"
 	
     respond_to do |format|
       if @incident.save

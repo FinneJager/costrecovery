@@ -1,8 +1,14 @@
 
-<div style="text-align:left;">
+<div style="text-align:left;float:left">
 <h1 style="color:#333333"><%= current_user.profile.department %></h1>
 <h2>Cost Recovery Control Panel</h2>
 </div>
+
+<div style="float:right;">
+<%= image_tag "irstlogo.png", :alt => 'Immediate Response Spill Technologies', :size => '175x75', :style => 'margin-bottom:0px' %>
+</div>
+
+<div style="clear:both;" />
 
 <div style="margin-bottom:20px;">
 <hr />
@@ -16,6 +22,8 @@
 <div id="header">
 <div style="float:left;"><%= image_tag "new.png", :alt => 'Submit a New Incident Report', :style => 'margin-right:5px' %></div><div style="float:left;"> <%= link_to 'Click here to submit a new incident', new_incident_path %></div>
 </div>
+
+<% if Incident.count != 0 %>
 
 <div style="margin-top:20px;" id="incidentlist">
 <table>
@@ -36,8 +44,12 @@
 	<td><%= incident.location %></td>
 	<% if incident.status == "In Progress" %>
 	<td><font color="#ff9600"><%= incident.status %></font></td>
-	<% else %>
+	<% end %>
+	<% if incident.status == "Completed" %>
 	<td><font color="green"><%= incident.status %></font></td>
+	<% end %>
+	<% if incident.status == "Received" %>
+	<td><font color="#ff9600"><%= incident.status %></font></td>
 	<% end %>
     <td><%= link_to 'View Time Sheet', incident_timesheet_path(incident) %></td>
 	<td><%= link_to 'Delete Incident', incident, :confirm => 'Are you sure?', :method => :delete %></td>
@@ -45,3 +57,7 @@
 <% end %>
 </table>
 </div>
+
+<% else %>
+<p><center>Your incidents will be listed here after you add the first one.</center></p>
+<% end %>

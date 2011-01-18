@@ -24,6 +24,8 @@ div.field, div.actions {
 
 p.notice {
 background-color: #00CC00;
+color:#FFF;
+font-weight:700;
 }
 
 #notice {
