@@ -25,7 +25,7 @@ class UsersController < ApplicationController
   def update
     @user = current_user
     if @user.update_attributes(params[:user])
-      redirect_to root_path, :notice => 'Updated user information successfully.'
+      redirect_to root_path, :notice => 'Successfully updated Email/Login.'
     else
       render :action => 'edit'
     end
