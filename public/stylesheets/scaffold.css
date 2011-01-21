@@ -23,9 +23,11 @@ div.field, div.actions {
 }
 
 p.notice {
-background-color: #00CC00;
+background-color: #00C90D;
 color:#FFF;
 font-weight:700;
+margin-left:-10px;
+padding:0 0 0 10px;
 }
 
 #notice {
@@ -65,7 +67,6 @@ font-weight:700;
 
 #header {
 	height: 100px;
-	background-color:#afe0ff;
 }
 
 #header a { 

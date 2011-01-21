@@ -1,10 +1,13 @@
 body {
 font-family:Arial, Verdana;
 background-color:#fff;
+margin:0;
+padding:0;
 }
 
 table {
 text-align:left;
+margin-left:10px;
 }
 
 table td {
@@ -13,7 +16,9 @@ padding:10px;
 
 table th {
 padding-left:10px;
-font-size:12px;
+padding-right:10px;
+font-size:14px;
+text-align:left;
 }
 
 .inprogress {
@@ -43,10 +48,84 @@ text-decoration:underline;
 font-weight:500;
 }
 
-a:hover {
-font-weight:700;
-}
 
 #incidentlist a {
 text-decoration:underline;
+}
+
+#banner {
+/* background-image:url('/images/headerbg.jpg'); */
+background:#04376C;
+height:100px;
+margin-bottom:0;
+margin-left:-10px;
+width:101.5%;
+padding-left:10px;
+}
+
+#banner img {
+margin-right:10px;
+}
+
+#loginbanner {
+/* background-image:url('/images/headerbg.jpg'); */
+background:#04376C;
+height:125px;
+margin-bottom:0;
+margin-left:-10px;
+width:101.5%;
+padding-left:10px;
+}
+
+#loginbanner p {
+color:#FFF;
+font-size:2em;
+margin:0;
+padding-top:30px;
+}
+
+#menubar {
+letter-spacing:3px;
+margin-top:0;
+background: #0D58A6;
+padding-left:20px;
+padding-top:10px;
+height:30px;
+color:#689CD2;
+margin-left:-10px;
+width:100%;
+}
+
+#menubar a {
+color:#FFF;
+text-decoration:none;
+letter-spacing:0;
+margin-bottom:10px;
+}
+
+#menubar a:hover {
+background:#689CD2;
+text-decoration:underline;
+}
+
+#submitit {
+margin-top:15px;
+margin-left:10px;
+}
+
+#maincontent {
+margin-left:10px;
+margin-top:10px;
+min-height:400px;
+}
+
+#footer {
+background:#04376C;
+color:#FFF;
+font-size:1em;
+padding:5px;
+width:100%;
+position: fixed;
+bottom: 0;
+text-align:center;
 }

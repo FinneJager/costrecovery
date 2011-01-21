@@ -8,10 +8,43 @@
 </head>
 <body>
 
+<% if  current_user %>
+<div id="banner">
+
+<div style="float:left;padding-left:10px;padding-top:5px;">
+<h1 style="color:#FFF"><%= current_user.profile.department %></h1>
+<h2 style="color:white;font-weight:400;">Cost Recovery Control Panel</h2>
+</div>
+
+<div style="float:right;padding:10px;">
+<%= image_tag "irstlogo.png", :alt => 'Immediate Response Spill Technologies', :size => '175x75', :style => 'margin-bottom:0px' %>
+</div>
+
+</div>
+
+<div id="menubar">
+<% if current_user.admin != "yes" %>
+<%= link_to 'Home', root_path %> | <%= link_to 'Change Your Email/Password', edit_user_path(current_user) %> | <%= link_to 'Change Your Profile', edit_profile_path(current_user.profile.id) %> | <a href="mailto:tom@ciagent.com">Email Us</a><span style="float:right;padding-right:20px;"><% end %><%= link_to 'Log out', logout_path %></span>
+</div>
+
+<% else %>
+<div id="loginbanner">
+<center>
+<%= image_tag "irstlogo.png", :alt => 'Immediate Response Spill Technologies', :style => 'margin-bottom:25px;margin-top:5px;' %>
+<p>Cost Recovery Control Panel</p>
+</center>
+</div>
+<% end %>
+
+<div id="maincontent">
 <%= content_tag :p, notice, :class => 'notice' if notice.present? %>
 <%= content_tag :p, alert, :class => 'alert' if alert.present? %>
-
 <%= yield %>
+</div>
+
+<div id="footer">
+Immediate Response Spill Technologies | 11760 Commonwealth Drive | Louisville, KY 40299 | Phone: 502-267-0101 | Fax: 502-267-0181
+</div>
 
 </body>
 </html>

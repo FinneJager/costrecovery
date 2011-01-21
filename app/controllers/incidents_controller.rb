@@ -73,7 +73,7 @@ class IncidentsController < ApplicationController
 
     respond_to do |format|
       if @incident.update_attributes(params[:incident])
-        format.html { redirect_to(@incident, :notice => 'Incident was successfully updated.') }
+        format.html { redirect_to(@incident) }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }

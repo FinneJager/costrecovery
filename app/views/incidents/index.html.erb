@@ -1,40 +1,18 @@
 
-<div style="text-align:left;float:left">
-<h1 style="color:#333333"><%= current_user.profile.department %></h1>
-<h2>Cost Recovery Control Panel</h2>
-</div>
-
-<div style="float:right;">
-<%= image_tag "irstlogo.png", :alt => 'Immediate Response Spill Technologies', :size => '175x75', :style => 'margin-bottom:0px' %>
-</div>
-
-<div style="clear:both;" />
-
-<div style="margin-bottom:20px;">
-<hr />
-<p>
-<% if current_user.admin != "yes" %>
-<%= link_to 'Change Your Email/Password', edit_user_path(current_user) %> | <%= link_to 'Change Your Profile', edit_profile_path(current_user.profile.id) %> | <a href="mailto:tom@ciagent.com">Email Us</a><span style="float:right;"><% end %><%= link_to 'Logout', logout_path %></span></p>
-<hr />
-</div>
-
-
-<div id="header">
-<div style="float:left;"><%= image_tag "new.png", :alt => 'Submit a New Incident Report', :style => 'margin-right:5px' %></div><div style="float:left;"> <%= link_to 'Click here to submit a new incident', new_incident_path %></div>
+<div id="submitit">
+<%= button_to 'Submit A New Incident', new_incident_path, :method => 'get' %>
 </div>
 
 <% if Incident.count != 0 %>
 
 <div style="margin-top:20px;" id="incidentlist">
 <table>
-  <tr>
+  <tr style="background:#e7e7e7">
     <th>Incident Date</th>
 	<th>Incident Report Number</th>
     <th>Location</th>
 	<th>Status</th>
-    <th></th>
-    <th></th>
-	<th></th>
+   
   </tr>
 
 <% @incidents.each do |incident| %>
@@ -59,5 +37,5 @@
 </div>
 
 <% else %>
-<p><center>Your incidents will be listed here after you add the first one.</center></p>
+<p><center>(Your incidents will be listed here after you add the first one)</center></p>
 <% end %>
