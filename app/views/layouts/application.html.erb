@@ -24,7 +24,7 @@
 
 <div id="menubar">
 <% if current_user.admin != "yes" %>
-<%= link_to 'Home', root_path %> | <%= link_to 'Change Your Email/Password', edit_user_path(current_user) %> | <%= link_to 'Change Your Profile', edit_profile_path(current_user.profile.id) %> | <a href="mailto:tom@ciagent.com">Email Us</a><span style="float:right;padding-right:20px;"><% end %><%= link_to 'Log out', logout_path %></span>
+<%= link_to 'Home', root_path %> | <%= link_to 'Change Your Email/Password', edit_user_path(current_user) %> | <%= link_to 'Change Your Profile', edit_profile_path(current_user.profile.id) %> | <a href="mailto:tom@ciagent.com">Email Us</a><span style="float:right;padding-right:40px;"><% end %><%= link_to 'Log out', logout_path %></span>
 </div>
 
 <% else %>
