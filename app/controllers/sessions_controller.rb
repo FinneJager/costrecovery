@@ -19,9 +19,7 @@ class SessionsController < ApplicationController
 	@the_email = params[:email]
 		
 	if User.find_by_email(@the_email)
-		@encrypted = User.find_by_email(@the_email).encrypt("irst-1234")
-		User.find_by_email(@the_email).hashed_password = @encrypted
-		User.find_by_email(@the_email).password = "irst-1234"
+		User.find_by_email(@the_email).update_attributes(:password => "irst-1234")
 		PassReset.send_new_pass(@the_email).deliver
 		redirect_to root_path
  	else 
