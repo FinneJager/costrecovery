@@ -20,6 +20,7 @@ class SessionsController < ApplicationController
 		
 	if User.find_by_email(@the_email)
 		User.find_by_email(@the_email).update_attributes(:password => "irst-1234")
+		@username = User.find_by_email(@the_email).profile.name
 		PassReset.send_new_pass(@the_email).deliver
 		redirect_to root_path
  	else 
