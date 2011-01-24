@@ -8,6 +8,7 @@ Costrecovery::Application.routes.draw do
 	post :send_notice
 	end
 	
+	
 	resource :timesheet do
 	    resource :command_officer
 		resource :fire_chief
@@ -31,7 +32,12 @@ Costrecovery::Application.routes.draw do
   resources :profiles
 
   
-  resource :session
+  resource :session do
+  member do
+  get :resetpass
+  post :resetpass
+  end
+  end
   
   match '/login' => "sessions#new", :as => "login"
   match '/logout' => "sessions#destroy", :as => "logout"
