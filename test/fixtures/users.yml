@@ -2,8 +2,10 @@
 
 one:
   email: MyString
-  password: MyString
+  hashed_password: 92d8e2f7a462601403ba6015f8d45e73f0fe200d
+  admin: no
 
 two:
   email: MyString
-  password: MyString
+  hashed password: dc009272b087019fb2b20b691dca1424a1a
+  admin: no
