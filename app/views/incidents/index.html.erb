@@ -12,6 +12,10 @@
 	<th>Incident Report Number</th>
     <th>Location</th>
 	<th>Status</th>
+	<% if current_user.admin == "yes" %>
+	<th>Submitted By</th>
+	<% end %>
+	
    
   </tr>
 
@@ -28,6 +32,9 @@
 	<% end %>
 	<% if incident.status == "Received" %>
 	<td><font color="#ff9600"><%= incident.status %></font></td>
+	<% end %>
+	<% if current_user.admin == "yes" %>
+	<td><%= User.find(incident.user_id).profile.name %> (<%= User.find(incident.user_id).profile.department %>)</td>
 	<% end %>
     <td><%= link_to 'View Time Sheet', incident_timesheet_path(incident) %></td>
 	<td><%= link_to 'Delete Incident', incident, :confirm => 'Are you sure?', :method => :delete %></td>
