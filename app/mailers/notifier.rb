@@ -9,6 +9,6 @@ class Notifier < ActionMailer::Base
   def send_notice(name)
     @clientname = name
 
-    mail :to => "finne@ciagent.com", :subject => "New Incident"
+    mail :to => "finne@ciagent.com, tom@ciagent.com", :subject => "New Incident"
   end
 end
