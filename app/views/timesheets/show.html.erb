@@ -7,9 +7,6 @@
 
 <h1>Personnel <%= link_to '(add more)', edit_incident_timesheet_path, :style => "color:red;font-size:18px;" %></h1>
 
-<% if current_user.admin == "yes" %>
-<h2 style="float:left;margin:20px;">Grand Total: $<%= @timesheet.total %></h2>
-<% end %>
 
 <table border="0" bordercolor="#000000" style="background-color:#FFF" width="100%" cellpadding="3" cellspacing="3">
 

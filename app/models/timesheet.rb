@@ -17,9 +17,10 @@ class Timesheet < ActiveRecord::Base
 	has_many :rescue_units, :dependent => :destroy
 	
 	def total
-    a = fire_fighters.to_a << command_officer << fire_chief
+    a = (fire_fighters.to_a << command_officer << fire_chief)
 	c = a.compact.inject(0) {|s, m| s + m.totalamount.to_f}
-	sprintf("%.2f", c)
+	d = sprintf("%.2f", c)
+	"Grand Total: $#{d}"
 	end
 	
 end
