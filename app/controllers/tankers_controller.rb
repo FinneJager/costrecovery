@@ -1,25 +1,17 @@
 class TankersController < ApplicationController
   # GET /tankers
   # GET /tankers.xml
-  def index
-    @tankers = Tanker.all
-
-    respond_to do |format|
-      format.html # index.html.erb
-      format.xml  { render :xml => @tankers }
-    end
-  end
-
+ 
   # GET /tankers/1
   # GET /tankers/1.xml
-  def show
-    @tanker = Tanker.find(params[:id])
+#  def show
+ #   @tanker = Tanker.find(params[:id])
 
-    respond_to do |format|
-      format.html # show.html.erb
-      format.xml  { render :xml => @tanker }
-    end
-  end
+  #  respond_to do |format|
+   #   format.html # show.html.erb
+    #  format.xml  { render :xml => @tanker }
+   # end
+ # end
 
   # GET /tankers/new
   # GET /tankers/new.xml
@@ -60,7 +52,7 @@ class TankersController < ApplicationController
 
     respond_to do |format|
       if @tanker.update_attributes(params[:tanker])
-        format.html { redirect_to(@tanker, :notice => 'Tanker was successfully updated.') }
+        format.html { redirect_to(incident_timesheet_path, :notice => 'Tanker was successfully updated.') }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }

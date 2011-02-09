@@ -4,14 +4,14 @@ class EmergencySupportsController < ApplicationController
   
   # GET /emergency_supports/1
   # GET /emergency_supports/1.xml
-  def show
-    @emergency_support = EmergencySupport.find(params[:id])
+  #def show
+   # @emergency_support = EmergencySupport.find(params[:id])
 
-    respond_to do |format|
-      format.html # show.html.erb
-      format.xml  { render :xml => @emergency_support }
-    end
-  end
+   # respond_to do |format|
+   #   format.html # show.html.erb
+   #   format.xml  { render :xml => @emergency_support }
+   # end
+ # end
 
   # GET /emergency_supports/new
   # GET /emergency_supports/new.xml
@@ -52,7 +52,7 @@ class EmergencySupportsController < ApplicationController
 
     respond_to do |format|
       if @emergency_support.update_attributes(params[:emergency_support])
-        format.html { redirect_to(@emergency_support, :notice => 'Emergency support was successfully updated.') }
+        format.html { redirect_to(incident_timesheet_path, :notice => 'Emergency support was successfully updated.') }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }

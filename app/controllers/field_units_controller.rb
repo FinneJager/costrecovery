@@ -5,14 +5,14 @@ class FieldUnitsController < ApplicationController
 
   # GET /field_units/1
   # GET /field_units/1.xml
-  def show
-    @field_unit = FieldUnit.find(params[:id])
+ # def show
+  #  @field_unit = FieldUnit.find(params[:id])
 
-    respond_to do |format|
-      format.html # show.html.erb
-      format.xml  { render :xml => @field_unit }
-    end
-  end
+   # respond_to do |format|
+    #  format.html # show.html.erb
+     # format.xml  { render :xml => @field_unit }
+  #  end
+ # end
 
   # GET /field_units/new
   # GET /field_units/new.xml
@@ -53,7 +53,7 @@ class FieldUnitsController < ApplicationController
 
     respond_to do |format|
       if @field_unit.update_attributes(params[:field_unit])
-        format.html { redirect_to(@field_unit, :notice => 'Field unit was successfully updated.') }
+        format.html { redirect_to(incident_timesheet_path, :notice => 'Field unit was successfully updated.') }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }

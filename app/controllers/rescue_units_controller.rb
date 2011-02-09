@@ -5,14 +5,14 @@ class RescueUnitsController < ApplicationController
 
   # GET /rescue_units/1
   # GET /rescue_units/1.xml
-  def show
-    @rescue_unit = RescueUnit.find(params[:id])
+ # def show
+  #  @rescue_unit = RescueUnit.find(params[:id])
 
-    respond_to do |format|
-      format.html # show.html.erb
-      format.xml  { render :xml => @rescue_unit }
-    end
-  end
+   # respond_to do |format|
+    #  format.html # show.html.erb
+     # format.xml  { render :xml => @rescue_unit }
+   # end
+ # end
 
   # GET /rescue_units/new
   # GET /rescue_units/new.xml
@@ -53,7 +53,7 @@ class RescueUnitsController < ApplicationController
 
     respond_to do |format|
       if @rescue_unit.update_attributes(params[:rescue_unit])
-        format.html { redirect_to(@rescue_unit, :notice => 'Rescue unit was successfully updated.') }
+        format.html { redirect_to(incident_timesheet_path, :notice => 'Rescue unit was successfully updated.') }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }

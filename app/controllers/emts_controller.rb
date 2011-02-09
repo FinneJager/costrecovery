@@ -4,14 +4,14 @@ class EmtsController < ApplicationController
  
   # GET /emts/1
   # GET /emts/1.xml
-  def show
-    @emt = Emt.find(params[:id])
+  #def show
+  #  @emt = Emt.find(params[:id])
 
-    respond_to do |format|
-      format.html # show.html.erb
-      format.xml  { render :xml => @emt }
-    end
-  end
+   # respond_to do |format|
+    #  format.html # show.html.erb
+     # format.xml  { render :xml => @emt }
+   # end
+  #end
 
   # GET /emts/new
   # GET /emts/new.xml
@@ -52,7 +52,7 @@ class EmtsController < ApplicationController
 
     respond_to do |format|
       if @emt.update_attributes(params[:emt])
-        format.html { redirect_to(@emt, :notice => 'Emt was successfully updated.') }
+        format.html { redirect_to(incident_timesheet_path, :notice => 'EMT was successfully updated.') }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }

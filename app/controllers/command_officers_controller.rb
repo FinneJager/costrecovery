@@ -3,14 +3,14 @@ before_filter :authenticate
 
   # GET /command_officers/1
   # GET /command_officers/1.xml
-  def show
-    @command_officer = CommandOfficer.find(params[:id])
+  #def show
+   # @command_officer = Incident.find(params[:incident_id]).timesheet.command_officer
 
-    respond_to do |format|
-      format.html # show.html.erb
-      format.xml  { render :xml => @command_officer }
-    end
-  end
+    #respond_to do |format|
+     # format.html # show.html.erb
+      #format.xml  { render :xml => @command_officer }
+    #end
+ # end
 
   # GET /command_officers/new
   # GET /command_officers/new.xml
@@ -25,7 +25,7 @@ before_filter :authenticate
 
   # GET /command_officers/1/edit
   def edit
-    @command_officer = CommandOfficer.find(params[:id])
+    @command_officer = Incident.find(params[:incident_id]).timesheet.command_officer
   end
 
   # POST /command_officers
@@ -48,16 +48,14 @@ before_filter :authenticate
   # PUT /command_officers/1
   # PUT /command_officers/1.xml
   def update
-    @command_officer = CommandOfficer.find(params[:id])
+    @command_officer = Incident.find(params[:incident_id]).timesheet.command_officer
 
     respond_to do |format|
       if @command_officer.update_attributes(params[:command_officer])
-        format.html { redirect_to(@command_officer, :notice => 'Command officer was successfully updated.') }
-        format.xml  { head :ok }
+        format.html { redirect_to(incident_timesheet_path, :notice => 'Command officer was successfully updated.') }
       else
         format.html { render :action => "edit" }
-        format.xml  { render :xml => @command_officer.errors, :status => :unprocessable_entity }
-      end
+     end
     end
   end
 

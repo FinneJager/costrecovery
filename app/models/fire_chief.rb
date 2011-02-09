@@ -7,7 +7,8 @@ class FireChief < ActiveRecord::Base
 	def totalamount
 		a = first_hour * rate1
 		b = additional_hours * rate2
-		a + b
+		c = a + b
+		sprintf("%.2f", c)
 	end
 	
 	def rate1

@@ -5,14 +5,14 @@ class HazmatSpecialistsController < ApplicationController
 
   # GET /hazmat_specialists/1
   # GET /hazmat_specialists/1.xml
-  def show
-    @hazmat_specialist = HazmatSpecialist.find(params[:id])
+ # def show
+  #  @hazmat_specialist = HazmatSpecialist.find(params[:id])
 
-    respond_to do |format|
-      format.html # show.html.erb
-      format.xml  { render :xml => @hazmat_specialist }
-    end
-  end
+   # respond_to do |format|
+    #  format.html # show.html.erb
+     # format.xml  { render :xml => @hazmat_specialist }
+   # end
+ # end
 
   # GET /hazmat_specialists/new
   # GET /hazmat_specialists/new.xml
@@ -53,7 +53,7 @@ class HazmatSpecialistsController < ApplicationController
 
     respond_to do |format|
       if @hazmat_specialist.update_attributes(params[:hazmat_specialist])
-        format.html { redirect_to(@hazmat_specialist, :notice => 'Hazmat specialist was successfully updated.') }
+        format.html { redirect_to(incident_timesheet_path, :notice => 'Hazmat specialist was successfully updated.') }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }

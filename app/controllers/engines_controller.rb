@@ -4,14 +4,14 @@ class EnginesController < ApplicationController
  
   # GET /engines/1
   # GET /engines/1.xml
-  def show
-    @engine = Engine.find(params[:id])
+  #def show
+  #  @engine = Engine.find(params[:id])
 
-    respond_to do |format|
-      format.html # show.html.erb
-      format.xml  { render :xml => @engine }
-    end
-  end
+   # respond_to do |format|
+     # format.html # show.html.erb
+    #  format.xml  { render :xml => @engine }
+   # end
+ # end
 
   # GET /engines/new
   # GET /engines/new.xml
@@ -52,7 +52,7 @@ class EnginesController < ApplicationController
 
     respond_to do |format|
       if @engine.update_attributes(params[:engine])
-        format.html { redirect_to(@engine, :notice => 'Engine was successfully updated.') }
+        format.html { redirect_to(incident_timesheet_path, :notice => 'Engine was successfully updated.') }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }

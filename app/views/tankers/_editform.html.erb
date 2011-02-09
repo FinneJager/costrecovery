@@ -1,0 +1,39 @@
+<%= form_for :tanker, @tanker, :url => { :action => "update" }, :html => { :method => :put } do |f| %>
+  <% if @tanker.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@tanker.errors.count, "error") %> prohibited this tanker from being saved:</h2>
+      <ul>
+      <% @tanker.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+<hr />
+ <p><strong><font color="red">IMPORTANT</font></strong>: Enter time on scene in hours (0.25 = fifteen minutes, 0.5 = half hour, 1 = one hour, etc.)</p>
+  <hr />
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :first_hour %> <font color="#666">(0.25 = fifteen minutes, 0.5 = half hour, etc.)</font><br />
+    <%= f.text_field :first_hour %>
+  </div>
+  <div class="field">
+    <%= f.label :additional_hours %> <br />
+    <%= f.text_field :additional_hours %>
+  </div>
+  <div class="field">
+    <%= f.label :total_hours %> <br />
+    <%= f.text_field :total_hours %>
+  </div>
+  <div class="field">
+    <%= f.label :hazmat_hours %> <br />
+    <%= f.text_field :hazmat_hours %>
+  </div>
+ 
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

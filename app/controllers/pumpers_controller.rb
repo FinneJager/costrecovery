@@ -4,14 +4,14 @@ class PumpersController < ApplicationController
  
   # GET /pumpers/1
   # GET /pumpers/1.xml
-  def show
-    @pumper = Pumper.find(params[:id])
+ # def show
+  #  @pumper = Pumper.find(params[:id])
 
-    respond_to do |format|
-      format.html # show.html.erb
-      format.xml  { render :xml => @pumper }
-    end
-  end
+   # respond_to do |format|
+     # format.html # show.html.erb
+    #  format.xml  { render :xml => @pumper }
+   # end
+ # end
 
   # GET /pumpers/new
   # GET /pumpers/new.xml
@@ -52,7 +52,7 @@ class PumpersController < ApplicationController
 
     respond_to do |format|
       if @pumper.update_attributes(params[:pumper])
-        format.html { redirect_to(@pumper, :notice => 'Pumper was successfully updated.') }
+        format.html { redirect_to(incident_timesheet_path, :notice => 'Pumper was successfully updated.') }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }

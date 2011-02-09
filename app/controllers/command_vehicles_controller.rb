@@ -4,14 +4,14 @@ class CommandVehiclesController < ApplicationController
   
   # GET /command_vehicles/1
   # GET /command_vehicles/1.xml
-  def show
-    @command_vehicle = CommandVehicle.find(params[:id])
+ # def show
+  #  @command_vehicle = CommandVehicle.find(params[:id])
 
-    respond_to do |format|
-      format.html # show.html.erb
-      format.xml  { render :xml => @command_vehicle }
-    end
-  end
+   # respond_to do |format|
+    #  format.html # show.html.erb
+     # format.xml  { render :xml => @command_vehicle }
+    #end
+ # end
 
   # GET /command_vehicles/new
   # GET /command_vehicles/new.xml
@@ -53,7 +53,7 @@ class CommandVehiclesController < ApplicationController
 
     respond_to do |format|
       if @command_vehicle.update_attributes(params[:command_vehicle])
-        format.html { redirect_to(@command_vehicle, :notice => 'Command vehicle was successfully updated.') }
+        format.html { redirect_to(incident_timesheet_path, :notice => 'Command vehicle was successfully updated.') }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }

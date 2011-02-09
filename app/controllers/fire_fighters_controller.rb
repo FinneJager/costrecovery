@@ -2,14 +2,14 @@ class FireFightersController < ApplicationController
  
   # GET /fire_fighters/1
   # GET /fire_fighters/1.xml
-  def show
-    @fire_fighter = FireFighter.find(params[:id])
+  #def show
+   # @fire_fighter = FireFighter.find(params[:id])
 
-    respond_to do |format|
-      format.html # show.html.erb
-      format.xml  { render :xml => @fire_fighter }
-    end
-  end
+   # respond_to do |format|
+   #   format.html # show.html.erb
+   #   format.xml  { render :xml => @fire_fighter }
+   # end
+  #end
 
   # GET /fire_fighters/new
   # GET /fire_fighters/new.xml
@@ -26,7 +26,7 @@ class FireFightersController < ApplicationController
   # GET /fire_fighters/1/edit
   def edit
     @fire_fighter = FireFighter.find(params[:id])
-  end
+ end
 
   # POST /fire_fighters
   # POST /fire_fighters.xml
@@ -50,7 +50,7 @@ class FireFightersController < ApplicationController
 
     respond_to do |format|
       if @fire_fighter.update_attributes(params[:fire_fighter])
-        format.html { redirect_to(@fire_fighter, :notice => 'Fire fighter was successfully updated.') }
+        format.html { redirect_to(incident_timesheet_path, :notice => 'Fire fighter was successfully updated.') }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }
