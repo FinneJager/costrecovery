@@ -7,8 +7,7 @@ class Pumper < ActiveRecord::Base
 	def totalamount
 		a = first_hour * rate1
 		b = additional_hours * rate2
-		c = a + b
-		sprintf("%.2f", c)
+		a + b
 	end
 	
 	def rate1

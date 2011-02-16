@@ -7,6 +7,8 @@
 
 <h1>Personnel <%= link_to '(add more)', edit_incident_timesheet_path, :style => "color:red;font-size:18px;" %></h1>
 
+<%-# @timesheet.total_amount -%>
+
 
 <table border="0" bordercolor="#000000" style="background-color:#FFF" width="100%" cellpadding="3" cellspacing="3">
 
@@ -60,12 +62,14 @@
 	</tr>
 	<% end %>
 	
+	<%= @timesheet.fire_fighters %>	
+	
 	<% if @timesheet.fire_fighters %>
-	<% @timesheet.fire_fighters.each do |firefighter| %>
+	<% @timesheet.fire_fighters.each do |ff| %>
 	<tr style="font-weight:700;background-color:#66CCFF;">
 		<td>Fire Fighter</td>
-		<td>First Hour ($<%= firefighter.rate1 %>)</td>
-		<td>Additional Hours ($<%= firefighter.rate2 %>)</td>
+		<td>First Hour ($<%= ff.rate1 %>)</td>
+		<td>Additional Hours ($<%= ff.rate2 %>)</td>
 		<td>Total Hours</td>
 		<td>Hazmat Time (in hours)</td>
 		<% if current_user.admin == "yes" %>
@@ -74,13 +78,13 @@
 		
 	</tr>
 	<tr>
-		<td><%= firefighter.name %><div style="float:right"><div style="float:left"><%= button_to "Edit", edit_incident_timesheet_fire_fighter_path(params[:incident_id], firefighter.id), :method => :get %></div><div style="float:left"><%= button_to "Delete", incident_timesheet_fire_fighter_path(params[:incident_id], firefighter.id), :confirm => "Are you sure you want to delete this Fire Fighter?", :controller => 'fire_fighters', :method => :delete %></div></div> </td>
-		<td><%= firefighter.first_hour %></td>
-		<td><%= firefighter.additional_hours %></td>
-		<td><%= firefighter.total_hours %></td>
-		<td><%= firefighter.hazmat_hours %></td>
+		<td><%= ff.name %> <div style="float:right"><div style="float:left"><%= button_to "Edit", edit_incident_timesheet_fire_fighter_path(params[:incident_id], ff.id), :method => :get %></div> <div style="float:left"><%= button_to "Delete", incident_timesheet_fire_fighter_path(params[:incident_id], ff.id), :confirm => "Are you sure you want to delete this Fire Fighter?", :controller => 'fire_fighters', :method => :delete %></div></div></td>
+		<td><%= ff.first_hour %></td>
+		<td><%= ff.additional_hours %></td>
+		<td><%= ff.total_hours %></td>
+		<td><%= ff.hazmat_hours %></td>
 		<% if current_user.admin == "yes" %>
-		<td>$<%= firefighter.totalamount %></td>
+		<td>$<%= ff.totalamount %></td>
 		<% end %>
 		
 	</tr>
