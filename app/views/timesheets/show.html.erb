@@ -7,8 +7,6 @@
 
 <h1>Personnel <%= link_to '(add more)', edit_incident_timesheet_path, :style => "color:red;font-size:18px;" %></h1>
 
-<%-# @timesheet.total_amount -%>
-
 
 <table border="0" bordercolor="#000000" style="background-color:#FFF" width="100%" cellpadding="3" cellspacing="3">
 
@@ -62,9 +60,7 @@
 	</tr>
 	<% end %>
 	
-	<%= @timesheet.fire_fighters %>	
-	
-	<% if @timesheet.fire_fighters %>
+	<% if @timesheet.fire_fighters.count > 0 %>
 	<% @timesheet.fire_fighters.each do |ff| %>
 	<tr style="font-weight:700;background-color:#66CCFF;">
 		<td>Fire Fighter</td>
