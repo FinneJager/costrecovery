@@ -2,6 +2,15 @@
 <%= link_to 'View Timesheet', incident_timesheet_path(@incident) %>
 <hr />
 <p id="notice"><%= notice %></p>
+
+<% if current_user.admin == "yes" %>
+
+<img src="<%= @incident.user.logo %>" /> <strong><%= @incident.user.profile.department %></strong>
+
+<% end %>
+
+<hr />
+
 <h2>General Incident Data</h2>
 <p>
   <b>Incident Date and Time:</b>

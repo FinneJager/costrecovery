@@ -5,6 +5,14 @@
 <hr />
 <div style="height:20px;"></div>
 
+<% if current_user.admin == "yes" %>
+<center>
+<img src="<%= @incident.user.logo %>" /> <strong><%= @incident.user.profile.department %></strong>
+</center>
+<% end %>
+
+<hr />
+
 <h1>Personnel <%= link_to '(add more)', edit_incident_timesheet_path, :style => "color:red;font-size:18px;" %></h1>
 
 
