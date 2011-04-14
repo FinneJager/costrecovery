@@ -45,13 +45,13 @@ height: 0.5px;
 
 a {
 text-decoration:underline;
-font-weight:500;
 }
 
 
 #incidentlist a {
 text-decoration:underline;
 }
+
 
 #banner {
 /* background-image:url('/images/headerbg.jpg'); */
