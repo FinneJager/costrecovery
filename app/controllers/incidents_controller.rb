@@ -7,7 +7,7 @@ class IncidentsController < ApplicationController
   # GET /incidents.xml
   def index
     if current_user.admin == "yes"
-	@incidents = Incident.all(:order => 'incident_datetime DESC')
+	@incidents = Incident.all(:order => 'created_at DESC')
 	else
 	@incidents = current_user.incidents
   end
