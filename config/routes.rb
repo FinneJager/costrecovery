@@ -3,10 +3,15 @@ Costrecovery::Application.routes.draw do
   root :to => "incidents#index"
   
   resources :incidents do
+    
     resource :mat_list
 	member do
 	post :send_notice
 	end
+	member do
+	get :changestatus
+	end
+
 	
 	
 	resource :timesheet do

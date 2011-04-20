@@ -24,15 +24,7 @@
     <td><%= incident.truncated_time %></td>
 	<td><%= link_to incident.report_nr, incident %></td>
 	<td><%= incident.location %></td>
-	<% if incident.status == "In Progress" %>
-	<td><font color="#ff9600"><%= incident.status %></font></td>
-	<% end %>
-	<% if incident.status == "Completed" %>
-	<td><font color="green"><%= incident.status %></font></td>
-	<% end %>
-	<% if incident.status == "Received" %>
-	<td><font color="#ff9600"><%= incident.status %></font></td>
-	<% end %>
+	<td><b><%= incident.status %></b> <% if current_user.admin == "yes" %><%= link_to "change", changestatus_incident_path(incident) %><% end %></td>
 	<% if current_user.admin == "yes" %>
 	<td><%= User.find(incident.user_id).profile.name %> (<%= User.find(incident.user_id).profile.department %>)</td>
 	<% end %>

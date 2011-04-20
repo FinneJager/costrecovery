@@ -43,6 +43,10 @@ class IncidentsController < ApplicationController
   def edit
     @incident = Incident.find(params[:id])
   end
+  
+  def changestatus
+    @incident = Incident.find(params[:id])
+  end
 
   # POST /incidents
   # POST /incidents.xml
