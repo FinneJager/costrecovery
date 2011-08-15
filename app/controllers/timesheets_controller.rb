@@ -3,7 +3,7 @@ before_filter :authenticate
   # GET /timesheets
   # GET /timesheets.xml
   def index
-    @timesheets = current_user.timesheets.all
+    @timesheets = current_user.timesheets.all 
 		
     respond_to do |format|
       format.html # index.html.erb
@@ -17,6 +17,7 @@ before_filter :authenticate
     @incident = Incident.find(params[:incident_id])
 	@timesheet = @incident.timesheet
 	@mat_list = @incident.mat_list
+	
 	
     respond_to do |format|
       format.html # show.html.erb

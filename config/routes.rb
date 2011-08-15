@@ -2,6 +2,11 @@ Costrecovery::Application.routes.draw do
    
   root :to => "incidents#index"
   
+  match "filter" => "filter#index"
+  
+  resources :users
+  resources :profiles
+  
   resources :incidents do
     
     resource :mat_list
@@ -31,12 +36,8 @@ Costrecovery::Application.routes.draw do
 		resources :rescue_units
 	end
   end
-  
   	
-  resources :users
-  resources :profiles
-
-  
+   
   resource :session do
   member do
   get :resetpass

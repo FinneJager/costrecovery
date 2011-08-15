@@ -1,16 +1,24 @@
 class IncidentsController < ApplicationController
 	
   before_filter :authenticate
-
     
   # GET /incidents
   # GET /incidents.xml
   def index
     if current_user.admin == "yes"
-	@incidents = Incident.all(:order => 'created_at DESC')
+	
+	#  if params[:user][:id]
+	#  @incidents = Incident.where("user_id = ?", params[:user][:id])
+	#  @users = User.all
+	#  else	  
+	 @incidents = Incident.all(:order => 'created_at DESC')
+	@users = User.all
+#	end
+	
 	else
 	@incidents = current_user.incidents
   end
+  
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @incidents }
@@ -58,6 +66,7 @@ class IncidentsController < ApplicationController
       if @incident.save
 	  @incident.create_timesheet()
 	  @incident.create_mat_list()
+	  @incident.create_gallery()
 	  
 	  @name = User.find(@incident.user_id).profile.name
 	  Notifier.send_notice(@name).deliver

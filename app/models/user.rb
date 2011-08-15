@@ -11,6 +11,10 @@ class User < ActiveRecord::Base
 	has_many :incidents, :order => 'incident_datetime DESC', :dependent => :destroy
 	has_many :timesheets, :through => :incidents
 	
+	def userdepartment
+	self.profile.department
+	end
+	
 	def self.authenticate(email, password)
     user = find_by_email(email)
     return user if user && user.authenticated?(password)
