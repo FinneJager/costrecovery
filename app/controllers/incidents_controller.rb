@@ -66,7 +66,7 @@ class IncidentsController < ApplicationController
       if @incident.save
 	  @incident.create_timesheet()
 	  @incident.create_mat_list()
-	  	  
+		  
 	  @name = User.find(@incident.user_id).profile.name
 	  Notifier.send_notice(@name).deliver
 	  	  
