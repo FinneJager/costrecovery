@@ -2,11 +2,14 @@ Costrecovery::Application.routes.draw do
    
   root :to => "incidents#index"
   
-  match "filter" => "filter#index"
-  
   resources :users
+#	resource :crewlist
+#	resources :crewmembers
+# end
+	
   resources :profiles
   
+    
   resources :incidents do
     
     resource :mat_list
