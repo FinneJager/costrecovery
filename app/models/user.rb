@@ -10,6 +10,7 @@ class User < ActiveRecord::Base
 	has_one :profile, :dependent => :destroy
 	has_many :incidents, :order => 'incident_datetime DESC', :dependent => :destroy
 	has_many :timesheets, :through => :incidents
+	has_one :crewlist, :dependent => :destroy
 	
 	def userdepartment
 	self.profile.department

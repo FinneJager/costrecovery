@@ -2,11 +2,11 @@ Costrecovery::Application.routes.draw do
    
   root :to => "incidents#index"
   
-  resources :users
-#	resource :crewlist
+ #	resource :crewlist
 #	resources :crewmembers
 # end
 	
+  resources :users
   resources :profiles
   
     

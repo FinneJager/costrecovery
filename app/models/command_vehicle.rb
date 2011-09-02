@@ -8,7 +8,7 @@ class CommandVehicle < ActiveRecord::Base
 		a = first_hour * rate1
 		b = additional_hours * rate2
 		a + b
-	end
+	end 
 	
 	def rate1
 		120
