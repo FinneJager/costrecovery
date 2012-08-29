@@ -14,7 +14,7 @@
 <h2>General Incident Data</h2>
 <p>
   <b>Incident Date and Time:</b>
-  <%= @incident.incident_datetime.in_time_zone('EST').strftime("%A %b %d, %Y - %I:%M%p (EST)")  %>
+  <%= @incident.incident_datetime.in_time_zone('UTC').strftime("%A %b %d, %Y - %I:%M%p (EST)")  %>
 </p>
 
 <p>
