@@ -1,0 +1,13 @@
+id,name,first_hour,additional_hours,total_hours,hazmat_hours,rate1,rate2,timesheet_id,created_at,updated_at,report_nr
+,Doug Gordon,1,0,1,1,,,,,,1001
+,Brad Putnam,0.5,0,0.5,0.5,,,,,,1001
+,Kelly Denney,0.5,0,0.5,0.5,,,,,,1001
+,Billy Howard,0.5,0,0.5,0.5,,,,,,1001
+,Bob Frizzell,0.5,0,0.5,0.25,,,,,,1001
+,Joe Ott,0.5,0,0.5,0.25,,,,,,1001
+,Greg Price,0.5,0,0.5,0,,,,,,1002
+,Rick Ruckriegel,0.5,0,0.5,0,,,,,,1002
+,Capt. Cody Ratliff,0.75,0,0.75,0.25,,,,,,1002
+,Kevin Bill,0.75,0,0.75,0.25,,,,,,1002
+,Brad Putnam,0.75,0,0.75,0.25,,,,,,1002
+,Billy Howard,0.75,0,0.75,0.25,,,,,,1002

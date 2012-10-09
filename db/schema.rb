@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110406171312) do
+ActiveRecord::Schema.define(:version => 20121009121924) do
 
   create_table "command_officers", :force => true do |t|
     t.string    "name"
@@ -23,6 +23,7 @@ ActiveRecord::Schema.define(:version => 20110406171312) do
     t.integer   "timesheet_id"
     t.timestamp "created_at"
     t.timestamp "updated_at"
+    t.string    "report_nr"
   end
 
   create_table "command_vehicles", :force => true do |t|
@@ -36,6 +37,7 @@ ActiveRecord::Schema.define(:version => 20110406171312) do
     t.integer   "timesheet_id"
     t.timestamp "created_at"
     t.timestamp "updated_at"
+    t.string    "report_nr"
   end
 
   create_table "emergency_supports", :force => true do |t|
@@ -49,6 +51,7 @@ ActiveRecord::Schema.define(:version => 20110406171312) do
     t.integer   "timesheet_id"
     t.timestamp "created_at"
     t.timestamp "updated_at"
+    t.string    "report_nr"
   end
 
   create_table "emts", :force => true do |t|
@@ -62,6 +65,7 @@ ActiveRecord::Schema.define(:version => 20110406171312) do
     t.integer   "timesheet_id"
     t.timestamp "created_at"
     t.timestamp "updated_at"
+    t.string    "report_nr"
   end
 
   create_table "engines", :force => true do |t|
@@ -75,6 +79,7 @@ ActiveRecord::Schema.define(:version => 20110406171312) do
     t.integer   "timesheet_id"
     t.timestamp "created_at"
     t.timestamp "updated_at"
+    t.string    "report_nr"
   end
 
   create_table "field_units", :force => true do |t|
@@ -88,6 +93,7 @@ ActiveRecord::Schema.define(:version => 20110406171312) do
     t.integer   "timesheet_id"
     t.timestamp "created_at"
     t.timestamp "updated_at"
+    t.string    "report_nr"
   end
 
   create_table "fire_chiefs", :force => true do |t|
@@ -101,6 +107,7 @@ ActiveRecord::Schema.define(:version => 20110406171312) do
     t.integer   "timesheet_id"
     t.timestamp "created_at"
     t.timestamp "updated_at"
+    t.string    "report_nr"
   end
 
   create_table "fire_fighters", :force => true do |t|
@@ -114,6 +121,7 @@ ActiveRecord::Schema.define(:version => 20110406171312) do
     t.integer   "timesheet_id"
     t.timestamp "created_at"
     t.timestamp "updated_at"
+    t.string    "report_nr"
   end
 
   create_table "hazmat_specialists", :force => true do |t|
@@ -127,6 +135,7 @@ ActiveRecord::Schema.define(:version => 20110406171312) do
     t.integer   "timesheet_id"
     t.timestamp "created_at"
     t.timestamp "updated_at"
+    t.string    "report_nr"
   end
 
   create_table "hazmat_units", :force => true do |t|
@@ -140,6 +149,7 @@ ActiveRecord::Schema.define(:version => 20110406171312) do
     t.integer   "timesheet_id"
     t.timestamp "created_at"
     t.timestamp "updated_at"
+    t.string    "report_nr"
   end
 
   create_table "incidents", :force => true do |t|
@@ -216,6 +226,7 @@ ActiveRecord::Schema.define(:version => 20110406171312) do
     t.text      "additional"
     t.timestamp "created_at"
     t.timestamp "updated_at"
+    t.string    "report_nr"
   end
 
   create_table "profiles", :force => true do |t|
@@ -242,6 +253,7 @@ ActiveRecord::Schema.define(:version => 20110406171312) do
     t.integer   "timesheet_id"
     t.timestamp "created_at"
     t.timestamp "updated_at"
+    t.string    "report_nr"
   end
 
   create_table "rescue_units", :force => true do |t|
@@ -255,6 +267,7 @@ ActiveRecord::Schema.define(:version => 20110406171312) do
     t.integer   "timesheet_id"
     t.timestamp "created_at"
     t.timestamp "updated_at"
+    t.string    "report_nr"
   end
 
   create_table "safety_officers", :force => true do |t|
@@ -268,6 +281,7 @@ ActiveRecord::Schema.define(:version => 20110406171312) do
     t.integer   "timesheet_id"
     t.timestamp "created_at"
     t.timestamp "updated_at"
+    t.string    "report_nr"
   end
 
   create_table "sessions", :force => true do |t|
@@ -291,6 +305,7 @@ ActiveRecord::Schema.define(:version => 20110406171312) do
     t.integer   "timesheet_id"
     t.timestamp "created_at"
     t.timestamp "updated_at"
+    t.string    "report_nr"
   end
 
   create_table "timesheets", :force => true do |t|

@@ -1,0 +1,4 @@
+id,name,first_hour,additional_hours,total_hours,hazmat_hours,rate1,rate2,timesheet_id,created_at,updated_at,report_nr
+,Hazmat Unit 1,1,1,2,0.5,,,,,,1002
+,Hazmat Unit 2,1,1,2,0.5,,,,,,1001
+,Hazmat Unit 3,1,1,2,0.5,,,,,,1001

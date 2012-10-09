@@ -1,0 +1,5 @@
+id,name,first_hour,additional_hours,total_hours,hazmat_hours,rate1,rate2,timesheet_id,created_at,updated_at,report_nr
+,Engine 3334,0.5,0,0.5,0,,,,,,1001
+,Engine 3334,0.75,0,0.75,0.5,,,,,,1001
+,E-320,1,0,1,1,,,,,,1002
+,3334,0.45,0,0.45,0.25,,,,,,1002

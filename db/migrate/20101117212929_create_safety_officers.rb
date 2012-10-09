@@ -9,6 +9,7 @@ class CreateSafetyOfficers < ActiveRecord::Migration
       t.integer :rate1
       t.integer :rate2
 	  t.integer :timesheet_id
+	  
 
       t.timestamps
     end
