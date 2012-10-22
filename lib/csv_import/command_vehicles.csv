@@ -1,5 +1,5 @@
 id,name,first_hour,additional_hours,total_hours,hazmat_hours,rate1,rate2,timesheet_id,created_at,updated_at,report_nr
-,Car 301,0.5,0,0.5,0.5,,,,,,1001
-,Car 350,0.75,0,0.75,0.25,,,,,,1001
-,Command Vehicle,1,0,1,0.5,,,,,,1002
-,Car 301,0.5,0,0.5,0.5,,,,,,1001
+,Car 301,1,0,1.5,0.5,,,,,,1001
+,Car 350,1,0,1.5,0.5,,,,,,1001
+,Car 327,0.75,0,1.5,0.75,,,,,,1001
+,Car 287,0.75,0,0.75,0,,,,,,1002
