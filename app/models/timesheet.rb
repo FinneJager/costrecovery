@@ -1,10 +1,10 @@
 class Timesheet < ActiveRecord::Base
 	belongs_to :incident
 	
-	has_one :command_officer, :dependent => :destroy
-	has_one :fire_chief, :dependent => :destroy
+	has_many :command_officer, :dependent => :destroy
+	has_many :fire_chief, :dependent => :destroy
 	has_many :fire_fighters, :dependent => :destroy
-	has_one :safety_officer, :dependent => :destroy
+	has_many :safety_officer, :dependent => :destroy
 	has_many :emts, :dependent => :destroy
 	has_many :hazmat_specialists, :dependent => :destroy
 	has_many :command_vehicles, :dependent => :destroy

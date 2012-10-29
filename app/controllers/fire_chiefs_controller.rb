@@ -25,7 +25,7 @@ class FireChiefsController < ApplicationController
 
   # GET /fire_chiefs/1/edit
   def edit
-    @fire_chief = Incident.find(params[:incident_id]).timesheet.fire_chief
+	@fire_chief = FireChief.find(params[:id])
   end
 
   # POST /fire_chiefs
@@ -33,7 +33,7 @@ class FireChiefsController < ApplicationController
    def create
     # @new_command_officer = CommandOfficer.new(params[:command_officer])
 	@timesheet = Incident.find(params[:incident_id]).timesheet
-    @fire_chief = @timesheet.build_fire_chief(params[:fire_chief])
+    @fire_chief = @timesheet.fire_chief.build(params[:fire_chief])
     
 	respond_to do |format|
 		if @fire_chief.save
@@ -47,7 +47,7 @@ class FireChiefsController < ApplicationController
   # PUT /fire_chiefs/1
   # PUT /fire_chiefs/1.xml
   def update
-    @fire_chief = Incident.find(params[:incident_id]).timesheet.fire_chief
+    @fire_chief = FireChief.find(params[:id])
 
     respond_to do |format|
       if @fire_chief.update_attributes(params[:fire_chief])
@@ -63,7 +63,7 @@ class FireChiefsController < ApplicationController
   # DELETE /fire_chiefs/1
   # DELETE /fire_chiefs/1.xml
   def destroy
-    @fire_chief = Incident.find(params[:incident_id]).timesheet.fire_chief
+    @fire_chief = FireChief.find(params[:id])
     @fire_chief.destroy
 
     respond_to do |format|

@@ -25,7 +25,7 @@ before_filter :authenticate
 
   # GET /command_officers/1/edit
   def edit
-    @command_officer = Incident.find(params[:incident_id]).timesheet.command_officer
+    @command_officer = CommandOfficer.find(params[:id])
   end
 
   # POST /command_officers
@@ -33,7 +33,7 @@ before_filter :authenticate
  def create
     # @new_command_officer = CommandOfficer.new(params[:command_officer])
 	@timesheet = Incident.find(params[:incident_id]).timesheet
-    @command_officer = @timesheet.build_command_officer(params[:command_officer])
+    @command_officer = @timesheet.command_officer.build(params[:command_officer])
     
 	respond_to do |format|
 		if @command_officer.save
@@ -48,7 +48,7 @@ before_filter :authenticate
   # PUT /command_officers/1
   # PUT /command_officers/1.xml
   def update
-    @command_officer = Incident.find(params[:incident_id]).timesheet.command_officer
+    @command_officer = CommandOfficer.find(params[:id])
 
     respond_to do |format|
       if @command_officer.update_attributes(params[:command_officer])
@@ -62,8 +62,7 @@ before_filter :authenticate
   # DELETE /command_officers/1
   # DELETE /command_officers/1.xml
   def destroy
-    #@command_officer = CommandOfficer.find(params[:id])
-	@command_officer = Incident.find(params[:incident_id]).timesheet.command_officer
+    @command_officer = CommandOfficer.find(params[:id])
     @command_officer.destroy
 
     respond_to do |format|

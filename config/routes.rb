@@ -18,10 +18,10 @@ Costrecovery::Application.routes.draw do
 	
 	
 	resource :timesheet do
-	    resource :command_officer
-		resource :fire_chief
+	    resources :command_officers
+		resources :fire_chiefs
 		resources :fire_fighters
-		resource :safety_officer
+		resources :safety_officers
 		resources :emts
 		resources :hazmat_specialists
 		resources :command_vehicles

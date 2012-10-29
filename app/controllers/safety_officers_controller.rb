@@ -27,14 +27,14 @@ class SafetyOfficersController < ApplicationController
 
   # GET /safety_officers/1/edit
   def edit
-    @safety_officer = Incident.find(params[:incident_id]).timesheet.safety_officer
+    @safety_officer = SafetyOfficer.find(params[:id])
   end
 
   # POST /safety_officers
   # POST /safety_officers.xml
   def create
     @timesheet = Incident.find(params[:incident_id]).timesheet
-	@safety_officer = @timesheet.build_safety_officer(params[:safety_officer])
+	@safety_officer = @timesheet.safety_officer.build(params[:safety_officer])
 
     respond_to do |format|
       if @safety_officer.save
@@ -48,7 +48,7 @@ class SafetyOfficersController < ApplicationController
   # PUT /safety_officers/1
   # PUT /safety_officers/1.xml
   def update
-    @safety_officer = Incident.find(params[:incident_id]).timesheet.safety_officer
+    @safety_officer = SafetyOfficer.find(params[:id])
 
     respond_to do |format|
       if @safety_officer.update_attributes(params[:safety_officer])
@@ -64,7 +64,7 @@ class SafetyOfficersController < ApplicationController
   # DELETE /safety_officers/1
   # DELETE /safety_officers/1.xml
   def destroy
-    @safety_officer = Incident.find(params[:incident_id]).timesheet.safety_officer
+    @safety_officer = SafetyOfficer.find(params[:id])
     @safety_officer.destroy
 
     respond_to do |format|
