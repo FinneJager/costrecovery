@@ -4,9 +4,10 @@ namespace :combine_csv do
 
 	task :combine => :environment do
 		Rake::Task["import_incidents_csv:create_incidents"].invoke
+		Rake::Task["import_mat_lists_csv:create_mat_lists"].invoke
 		Rake::Task["import_timesheets_csv:create_timesheets"].invoke
 		Rake::Task["import_command_officers_csv:create_command_officers"].invoke
-		Rake::Task["import_mat_lists_csv:create_mat_lists"].invoke
+		
 		
 		Rake::Task["import_safety_officers_csv:create_safety_officers"].invoke
 		Rake::Task["import_fire_fighters_csv:create_fire_fighters"].invoke
@@ -21,5 +22,6 @@ namespace :combine_csv do
 		Rake::Task["import_pumpers_csv:create_pumpers"].invoke
 		Rake::Task["import_rescue_units_csv:create_rescue_units"].invoke
 		Rake::Task["import_tankers_csv:create_tankers"].invoke
+		
 	end
 end

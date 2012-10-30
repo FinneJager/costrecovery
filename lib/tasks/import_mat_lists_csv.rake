@@ -1,5 +1,3 @@
-
-
 #require 'csv'
 
 #namespace :import_mat_lists_csv do
@@ -24,9 +22,6 @@
 
 
 
-
-
-
 require 'csv'
 
 namespace :import_mat_lists_csv do
@@ -40,12 +35,18 @@ namespace :import_mat_lists_csv do
 			row = row.to_hash.with_indifferent_access
 			MatList.create!(row.to_hash.symbolize_keys)
 			matlist = MatList.last
-			if @report_timesheet_hash.key?(matlist.report_nr)
-				matlist.incident_id = "#{@report_timesheet_hash[matlist.report_nr]}"
+			if @report_incident_hash.key?(matlist.report_nr)
+				matlist.incident_id = "#{@report_incident_hash[matlist.report_nr]}"
 			end
 			
-			#matlist.timesheet_id = @timesheet_id_array[index]
+			#matlist.incident_id = @timesheet_id_array[index]
 			matlist.save
 		end
     end
 end
+
+
+
+
+
+

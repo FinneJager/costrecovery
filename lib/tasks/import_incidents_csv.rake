@@ -16,5 +16,15 @@ namespace :import_incidents_csv do
 			@incident_id_array << Incident.last.id
 			@report_nr_array << Incident.last.report_nr
 		end
+		
+#------This combines the incidents array and the report_nr array into a hash
+		
+		@report_incident_hash = {}
+		@report_nr_array.each_with_index do |value, index|
+			@report_incident_hash[value] = @incident_id_array[index]
+		end
+		#puts @report_incident_hash
+#----------------------------------------------------------------------------
+		
    end
 end
