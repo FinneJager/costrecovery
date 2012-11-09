@@ -1,0 +1,2 @@
+module LadderTruck75sHelper
+end

@@ -1,0 +1,23 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  name: MyString
+  first_hour: 1
+  additional_hours: 1
+  total_hours: 1
+  hazmat_hours: 1
+  rate1: 1
+  rate2: 1
+  timesheet_id: 1
+  report_nr: MyString
+
+two:
+  name: MyString
+  first_hour: 1
+  additional_hours: 1
+  total_hours: 1
+  hazmat_hours: 1
+  rate1: 1
+  rate2: 1
+  timesheet_id: 1
+  report_nr: MyString

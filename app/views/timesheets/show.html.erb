@@ -397,6 +397,34 @@
 	<% end %>
 	<% end %>
 	
+	<% if @timesheet.ladder_truck75s %>
+	<% @timesheet.ladder_truck75s.each do |lt75| %>
+	<tr style="font-weight:700;background-color:#66CCFF;">
+		<td>Ladder Truck 75'</td>
+		<td>First Hour ($<%= lt75.rate1 %>)</td>
+		<td>Additional Hours ($<%= lt75.rate2 %>)</td>
+		<td>Total Hours</td>
+		<td>Hazmat Time (in hours)</td>
+		<% if current_user.admin == "yes" %>
+		<td>Total Amount</td>		
+		<% end %>
+		
+	</tr>
+	<tr>
+		<td><%= lt75.name %> <div style="float:right"><div style="float:left"><%= button_to "Edit", edit_incident_timesheet_ladder_truck75_path(params[:incident_id], lt75.id), :method => :get %></div><div style="float:left"> <%= button_to "Delete", incident_timesheet_ladder_truck75_path(params[:incident_id], lt75.id), :confirm => "Are you sure you want to delete this Ladder Truck?", :controller => 'ladder_truck75s', :method => :delete %></div></div></td>
+		<td><%= lt75.first_hour %></td>
+		<td><%= lt75.additional_hours %></td>
+		<td><%= lt75.total_hours %></td>
+		<td><%= lt75.hazmat_hours %></td>
+		<% if current_user.admin == "yes" %>
+		<td>$<%= lt75.totalamount %></td>
+		<% end %>
+		
+	</tr>
+	<% end %>
+	<% end %>
+
+	
 </table>
 <h1>Materials <%= link_to '(edit)', edit_incident_mat_list_path, :style => "color:red;font-size:18px;" %></h1>
 
