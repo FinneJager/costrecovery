@@ -2,6 +2,8 @@ Costrecovery::Application.routes.draw do
    
   
 
+  
+
   root :to => "incidents#index"
   
   resources :users
@@ -35,6 +37,7 @@ Costrecovery::Application.routes.draw do
 		resources :tankers
 		resources :rescue_units
 		resources :ladder_truck75s
+		resources :ladder_truck150s
 	end
   end
   	

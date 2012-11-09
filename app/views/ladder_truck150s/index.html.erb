@@ -1,0 +1,39 @@
+<h1>Listing ladder_truck150s</h1>
+
+<table>
+  <tr>
+    <th>Names</th>
+    <th>First hour</th>
+    <th>Additional hours</th>
+    <th>Total hours</th>
+    <th>Hazmat hours</th>
+    <th>Rate1</th>
+    <th>Rate2</th>
+    <th>Timesheet</th>
+    <th>Report nr</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @ladder_truck150s.each do |ladder_truck150| %>
+  <tr>
+    <td><%= ladder_truck150.names %></td>
+    <td><%= ladder_truck150.first_hour %></td>
+    <td><%= ladder_truck150.additional_hours %></td>
+    <td><%= ladder_truck150.total_hours %></td>
+    <td><%= ladder_truck150.hazmat_hours %></td>
+    <td><%= ladder_truck150.rate1 %></td>
+    <td><%= ladder_truck150.rate2 %></td>
+    <td><%= ladder_truck150.timesheet_id %></td>
+    <td><%= ladder_truck150.report_nr %></td>
+    <td><%= link_to 'Show', ladder_truck150 %></td>
+    <td><%= link_to 'Edit', edit_ladder_truck150_path(ladder_truck150) %></td>
+    <td><%= link_to 'Destroy', ladder_truck150, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Ladder truck150', new_ladder_truck150_path %>

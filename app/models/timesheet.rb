@@ -16,6 +16,7 @@ class Timesheet < ActiveRecord::Base
 	has_many :tankers, :dependent => :destroy
 	has_many :rescue_units, :dependent => :destroy
 	has_many :ladder_truck75s, :dependent => :destroy
+	has_many :ladder_truck150s, :dependent => :destroy
 	
 	def total_amount
     a = (fire_fighters.to_a << command_officer << fire_chief)

@@ -46,7 +46,7 @@ class LadderTruck75sController < ApplicationController
 
     respond_to do |format|
       if @ladder_truck75.save
-        format.html { redirect_to(edit_incident_timesheet_path, :notice => 'Ladder Truck 75 was successfully created.') }
+        format.html { redirect_to(edit_incident_timesheet_path, :notice => 'Ladder Truck 75ft. was successfully created.') }
       else
         format.html { render :action => "new" }
       end
@@ -60,7 +60,7 @@ class LadderTruck75sController < ApplicationController
 
     respond_to do |format|
       if @ladder_truck75.update_attributes(params[:ladder_truck75])
-        format.html { redirect_to(incident_timesheet_path, :notice => 'Ladder Truck 75 was successfully updated.') }
+        format.html { redirect_to(incident_timesheet_path, :notice => 'Ladder Truck 75ft. was successfully updated.') }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }
