@@ -184,31 +184,31 @@ ActiveRecord::Schema.define(:version => 20121109194053) do
   end
 
   create_table "ladder_truck150s", :force => true do |t|
-    t.string   "name"
-    t.float    "first_hour"
-    t.float    "additional_hours"
-    t.float    "total_hours"
-    t.float    "hazmat_hours"
-    t.float    "rate1"
-    t.float    "rate2"
-    t.integer  "timesheet_id"
-    t.string   "report_nr"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.string    "name"
+    t.float     "first_hour"
+    t.float     "additional_hours"
+    t.float     "total_hours"
+    t.float     "hazmat_hours"
+    t.float     "rate1"
+    t.float     "rate2"
+    t.integer   "timesheet_id"
+    t.string    "report_nr"
+    t.timestamp "created_at"
+    t.timestamp "updated_at"
   end
 
   create_table "ladder_truck75s", :force => true do |t|
-    t.string   "name"
-    t.float    "first_hour"
-    t.float    "additional_hours"
-    t.float    "total_hours"
-    t.float    "hazmat_hours"
-    t.float    "rate1"
-    t.float    "rate2"
-    t.integer  "timesheet_id"
-    t.string   "report_nr"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.string    "name"
+    t.float     "first_hour"
+    t.float     "additional_hours"
+    t.float     "total_hours"
+    t.float     "hazmat_hours"
+    t.float     "rate1"
+    t.float     "rate2"
+    t.integer   "timesheet_id"
+    t.string    "report_nr"
+    t.timestamp "created_at"
+    t.timestamp "updated_at"
   end
 
   create_table "mat_lists", :force => true do |t|

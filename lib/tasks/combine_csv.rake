@@ -22,6 +22,8 @@ namespace :combine_csv do
 		Rake::Task["import_pumpers_csv:create_pumpers"].invoke
 		Rake::Task["import_rescue_units_csv:create_rescue_units"].invoke
 		Rake::Task["import_tankers_csv:create_tankers"].invoke
+		Rake::Task["import_ladder_truck75_csv:create_ladder_truck75"].invoke
+		Rake::Task["import_ladder_truck150_csv:create_ladder_truck150"].invoke
 		
 	end
 end
