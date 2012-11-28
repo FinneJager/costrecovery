@@ -596,6 +596,20 @@
 	</tr>
 	<% end %>
 	
+	<% if @mat_list.stay %>
+	<tr>
+		<td>Stay Dry</td>
+		<td><%= @mat_list.stay_am %></td>
+	</tr>
+	<% end %>	
+	
+	<% if @mat_list.soda %>
+	<tr>
+		<td>Soda Ash</td>
+		<td><%= @mat_list.soda_am %></td>
+	</tr>
+	<% end %>	
+	
 	</table>
 	
 	<% if @mat_list.additional != '' %>
