@@ -1,0 +1,5 @@
+id,name,first_hour,additional_hours,total_hours,hazmat_hours,rate1,rate2,timesheet_id,created_at,updated_at,report_nr
+,Ladder150 - 1,1,0.5,1.5,0.25,,,,,,1001
+,Ladder 150 -2,0.75,0,0.75,0,,,,,,1002
+,Ladder 150-3,1,0.5,1.5,0.25,,,,,,1001
+,Ladder 150 - 4,0.75,0,0.75,0,,,,,,1002

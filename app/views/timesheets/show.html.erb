@@ -610,6 +610,20 @@
 	</tr>
 	<% end %>	
 	
+	<% if @mat_list.strike %>
+	<tr>
+		<td>1st Strike</td>
+		<td><%= @mat_list.strike_am %></td>
+	</tr>
+	<% end %>	
+	
+	<% if @mat_list.wtrPolymers %>
+	<tr>
+		<td>C.I.Agent Water Polymers</td>
+		<td><%= @mat_list.wtrPolymers_am %></td>
+	</tr>
+	<% end %>	
+	
 	</table>
 	
 	<% if @mat_list.additional != '' %>
